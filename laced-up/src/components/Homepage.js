@@ -20,21 +20,26 @@ const Homepage = () => {
       image: three,
       description: 'Shoes Always $100 & Under',
       cta: 'Shop',
-      link: '/clearance'
+      link: '/clearance',
+      id: 1
     },
     {
       name: '',
       image: four,
       description: `Love them? Move them. Valentine's Day Pick`,
       cta: 'Shop',
-      link: '/clearance'
+      link: '/clearance',
+      id: 2
     },
   ]
 
   
   return (
     <section>
-
+      <div style={{backgroundColor: '#F7F7F7', padding: '10px 0'}}>
+          <p style={{margin: '0', textTransform: 'uppercase'}}>Free shipping & 60-Day Free return</p>
+          <Link to='/membership'>Join Now</Link>
+        </div>
       <video loop autoPlay muted style={{width: '100%'}}>
         <source src= { hero } type="video/mp4" />
       </video>
@@ -54,6 +59,7 @@ const Homepage = () => {
       <h2 style={{textAlign: 'left'}}>Trending Now</h2>
         {shoes.map(item => {
           return <NewItem 
+            key={item.id}
             image={item.image}
             description={item.description}
             cta={item.cta}
@@ -64,7 +70,7 @@ const Homepage = () => {
       </section>
 
       <section>
-        <p>The Latest And Greatest</p>
+        <h2>The Latest And Greatest</h2>
 
         <div>
           insert cards with slider...
@@ -78,3 +84,5 @@ const Homepage = () => {
 }
 
 export default Homepage;
+
+

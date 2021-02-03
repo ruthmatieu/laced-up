@@ -2,8 +2,8 @@ import React from 'react';
 import './App.css';
 import { Switch, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import styled from 'styled-components'
-
+import styled from 'styled-components';
+import breakpoint from './breakpoints';
 //components
 import Homepage from './components/Homepage';
 import NewReleases from './components/NewReleases';
@@ -56,7 +56,7 @@ const App = () => {
   return (
     <Wrapper className="App">
       <header>
-      <nav className='desktop__nav'>
+      <Nav className='desktop__nav'>
             <Link to='/'><img src='' alt='company logo'/></Link>
 
             <div className='menu__items'>
@@ -72,7 +72,7 @@ const App = () => {
                   <Link to='/sign-in'><button>Sign in</button></Link>
               </div>
             </div>
-        </nav>
+        </Nav>
       </header>
 
       <Switch>
@@ -91,3 +91,11 @@ const App = () => {
 }
 
 export default App;
+
+const Nav = styled.nav `
+  background-color: ;
+
+  @media only screen and ${breakpoint.device.mobile} {
+    
+  }
+`;
