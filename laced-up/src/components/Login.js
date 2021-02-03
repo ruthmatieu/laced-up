@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import * as yup from 'yup';
 
 const data = {
     email: '',
@@ -13,14 +14,49 @@ const error = {
     checkbox: false
 }
 
+const formSchema = yup.object().shape({
+    email: yup.string()
+        .required('Please enter a valid email address.'),
+    password: yup.string()
+        .required('Please enter a password.')
+        .min(5, '5 characters minimum required.'),
+    checkbox: yup.boolean()
+        
+});
+
+
+
 const Login = () => {
 
     const history = useHistory();
-    const [form, setForm] = useState(data)
+    const [form, setForm] = useState(data);
+    const [errorState, setErrorState] = useState(error)
+
+
+    const validation = e => {
+        yup.reach(formSchema, e.target.name)
+            .validate(e.target.value)
+                .then (item => {
+                    setErrorState({
+                        ...errorState,
+                        [e.target.name]: ''
+                })
+            })
+            .catch(err => {
+                setErrorState({
+                    ...errorState,
+                    [e.target.name]: err.errors[0]
+                })
+            })
+    }
 
     const changeHandler = e => {
         e.persist();
-        
+        validation(e);
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        })
     }
 
     const submitHandler = e => {
@@ -30,8 +66,10 @@ const Login = () => {
             password: '',
             checkbox: false
         })
-        history.push('/membership/success')
+        history.push('/')
     }
+
+    
 
     return (
         <div onSubmit={submitHandler}>
@@ -43,10 +81,11 @@ const Login = () => {
                         type='email'
                         id='email'
                         name='email'
-                        value={data.email}
-                        onChange=''
+                        value={form.email}
+                        onChange={changeHandler}
                         placeholder='Email address'
                     />
+                    {(errorState.email.length > 0) ? <p>{errorState.email}</p>: null}
                 </label>
                 <br/>
                 <label htmlFor='password'>
@@ -54,20 +93,21 @@ const Login = () => {
                         type='password'
                         id='password'
                         name='password'
-                        value={data.password}
-                        onChange=''
+                        value={form.password}
+                        onChange={changeHandler}
                         placeholder='Password'
                     />
+                    {(errorState.password.length > 0) ? <p>{errorState.password}</p>: null}
                 </label>
+                
                 <br/>
                 <div>
-                    <label htmlFor=''>
+                    <label htmlFor='isSignedIn'>
                         <input
                             type='checkbox'
                             id='isSignedIn'
                             name='isSignedIn'
-                            value={data.checkbox}
-                            onChange=''
+                            value={form.checkbox}
                         />
                         Keep me signed in
                     </label>

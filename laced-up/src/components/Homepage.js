@@ -2,36 +2,69 @@ import React from 'react';
 import Footer from './Footer';
 import { Link } from 'react-router-dom';
 
+//components
+import NewItem from './NewItem';
+
+//images
+import one from '../images/products/new-release-collection-1.png';
+import two from '../images/products/new-release-collection-2.png';
+import three from '../images/products/im.png';
+import four from '../images/products/fourteen.jpg';
+import hero from '../images/videos/hero.mp4';
+
 const Homepage = () => {
+
+  const shoes = [
+    {
+      name: '',
+      image: three,
+      description: 'Shoes Always $100 & Under',
+      cta: 'Shop',
+      link: '/clearance'
+    },
+    {
+      name: '',
+      image: four,
+      description: `Love them? Move them. Valentine's Day Pick`,
+      cta: 'Shop',
+      link: '/clearance'
+    },
+  ]
+
+  
   return (
     <section>
-      insert image slider
+
+      <video loop autoPlay muted style={{width: '100%'}}>
+        <source src= { hero } type="video/mp4" />
+      </video>
 
       <section>
-        <p>new year.<br/>new energy.</p>
-        <Link to='/new-releases'><button>Shop</button></Link>
-      </section>
-
-      <section>
-        <p>Trending Now</p>
-
-        <div>
-          <div className='trending__card'>
-            <p>title: $100 or under</p>
-            <img src='' alt=''/>
-            <Link to='/clearance'><button>Shop</button></Link>
+        <div style={{padding:'10px 0 15px 0', textAlign: 'left'}}>
+          <h1 style={{fontFamily: `'Oswald', sans-serif`, fontSize: '45px', textTransform: 'uppercase', margin: '0', lineHeight: '45px'}}>new year,<br/>new energy.</h1>
+          <p>Take on anything the new year throws your way in<br/>these functional styles.</p>
+          <div style={{display: 'flex', justifyContent: 'center', width: '100%'}}>
+            <img src={one} alt='' style={{width: '50%', marginRight:'2px'}}/>
+            <img src={two} alt='' style={{width: '50%', marginLeft:'2px'}}/>
           </div>
-
-          <div className='trending__card'>
-            <p>title: $100 or under</p>
-            <img src='' alt=''/>
-            <Link to='/clearance'><button>Shop</button></Link>
-          </div>
+          <Link to='/new-releases'><button>Shop</button></Link>
         </div>
+        
+
+      <h2 style={{textAlign: 'left'}}>Trending Now</h2>
+        {shoes.map(item => {
+          return <NewItem 
+            image={item.image}
+            description={item.description}
+            cta={item.cta}
+            link={item.link}
+            name={item.name}
+          />
+        })}
       </section>
 
       <section>
-        <p>The Latest</p>
+        <p>The Latest And Greatest</p>
 
         <div>
           insert cards with slider...

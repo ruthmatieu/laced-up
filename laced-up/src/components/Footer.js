@@ -1,8 +1,11 @@
 import React from 'react';
 
 const Footer = () => {
+
+  //find li styles in index.css
+  
     return (
-      <footer>
+      <footer style={{backgroundColor: '#111111'}}>
         <div className='footer__container'>
 
           <div>

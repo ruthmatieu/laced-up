@@ -10,6 +10,7 @@ import NewReleases from './components/NewReleases';
 import MensShoes from './components/MensShoes';
 import WomensShoes from './components/WomensShoes';
 import AllShoes from './components/AllShoes';
+import Clearance from './components/Clearance';
 import Register from './components/Register';
 import Login from './components/Login';
 import ConfirmedMembership from './components/ConfirmedMembership';
@@ -21,14 +22,14 @@ const App = () => {
 
   const key = 'f770a0f0-ce28-4b77-aa32-e63806448ee4';
 
-  axios
-    .get(`https://cors-anywhere.herokuapp.com/http://nikeplus.nike.com/nikeplus/v1/services`)
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      console.log('Mercedes error', err)
-    })
+  // axios
+  //   .get(`https://cors-anywhere.herokuapp.com/http://nikeplus.nike.com/nikeplus/v1/services`)
+  //   .then(res => {
+  //     console.log(res);
+  //   })
+  //   .catch(err => {
+  //     console.log('Mercedes error', err)
+  //   })
 
     //HU:PguX75fJWc_t
 
@@ -83,6 +84,7 @@ const App = () => {
         <Route exact path='/membership' component={Register}/>
         <Route path='/sign-in' component={Login}/>
         <Route path='/membership/success' component={ConfirmedMembership}/>
+        <Route path='/clearance' component={Clearance}/>
       </Switch>
     </Wrapper>
   );
