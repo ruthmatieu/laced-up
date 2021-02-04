@@ -20,6 +20,7 @@ export const allShoes = [
         subTitle: `Men's Shoe`,
         image: one,
         price: 85,
+        availability: '2 colors',
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
     {
@@ -27,6 +28,7 @@ export const allShoes = [
         name: 'Nike Air',
         subTitle: `Men's Shoe`,
         image: two,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -35,6 +37,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: three,
+        availability: '3 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -43,6 +46,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: four,
+        availability: '5 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -51,6 +55,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: five,
+        availability: '3 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -59,6 +64,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: six,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -67,6 +73,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: seven,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -75,6 +82,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: eight,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -83,6 +91,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: nine,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -99,6 +108,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: eleven,
+        availability: '1 color',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -107,6 +117,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: twelve,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -115,6 +126,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: thirteen,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -123,6 +135,7 @@ export const allShoes = [
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
         image: fourteen,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -130,7 +143,8 @@ export const allShoes = [
         id: 15,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: one,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -138,7 +152,8 @@ export const allShoes = [
         id: 16,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: two,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -146,7 +161,8 @@ export const allShoes = [
         id: 17,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: three,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -154,7 +170,8 @@ export const allShoes = [
         id: 18,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: four,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -162,7 +179,8 @@ export const allShoes = [
         id: 19,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: five,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -170,7 +188,8 @@ export const allShoes = [
         id: 20,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: six,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -178,7 +197,8 @@ export const allShoes = [
         id: 21,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: seven,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -186,7 +206,8 @@ export const allShoes = [
         id: 22,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: eight,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -194,7 +215,8 @@ export const allShoes = [
         id: 23,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: nine,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -202,7 +224,8 @@ export const allShoes = [
         id: 24,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: ten,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -210,7 +233,8 @@ export const allShoes = [
         id: 25,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: eleven,
+        availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     }
@@ -333,7 +357,7 @@ export const menShoes = [
         id: 15,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: '',
+        image: one,
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     }
