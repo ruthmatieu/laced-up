@@ -47,7 +47,7 @@ const Homepage = ({shoeList}) => {
     <section>
       <div style={{backgroundColor: '#F7F7F7', padding: '10px 0'}}>
           <p style={{margin: '0', textTransform: 'uppercase'}}>Free shipping & 60-Day Free return</p>
-          <Link to='/membership'>Join Now</Link>
+          <Link to='/membership' style={{color: 'black', fontSize: '13px'}}>Join Now</Link>
       </div>
       <div style={{margin: '0 15px'}}>
         <video loop autoPlay muted style={{width: '100%'}}>
@@ -85,7 +85,7 @@ const Homepage = ({shoeList}) => {
           <div style={{display: 'flex', overflowY: 'hidden', overflowX: 'auto', whiteSpace: 'nowrap'}}>
             {latestAndGreatest.map(item => {
               return (
-                <div key={item.id} onDrag={''}>
+                <div key={item.id}>
                   <div>
                   <Link to={`/shoe/${item.id}`}><img src={item.image} alt={item.name} style={{width: '300px', marginRight: '7px'}}/></Link>
                     <div style={{textAlign: 'left'}}>
