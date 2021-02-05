@@ -6,6 +6,10 @@ import { Switch, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import breakpoint from './breakpoints';
 import { allShoes } from './data';
+import { menShoes } from './data';
+import { womenShoes } from './data';
+import { latestAndGreatest } from './data';
+import { clearance } from './data';
 //components
 import Homepage from './components/Homepage';
 import NewReleases from './components/NewReleases';
@@ -26,6 +30,10 @@ import logo from './images/logo.png';
 const App = () => {
 
 const [shoeList] = useState(allShoes);
+const [menShoeList] = useState(menShoes);
+const [womenShoeList] = useState(womenShoes);
+const [newRelease] = useState(latestAndGreatest);
+const [clearanceShoes] = useState(clearance);
 
   const Wrapper = styled.div`
 
@@ -146,13 +154,21 @@ const Nav = styled.nav `
         <Route exact path='/'>
           <Homepage shoeList={shoeList}/>
         </Route>
-        <Route path='/new-releases' component={NewReleases}/>
-        <Route path='/mens-shoes' component={MensShoes}/>
-        <Route path='/womens-shoes' component={WomensShoes}/>
+        <Route path='/new-releases'>
+          <NewReleases shoeList={newRelease}/>
+        </Route>
+        <Route path='/mens-shoes'>
+          <MensShoes shoeList={menShoeList}/>
+        </Route>
+        <Route path='/womens-shoes'>
+          <WomensShoes shoeList={womenShoeList}/>
+        </Route>
         <Route exact path='/membership' component={Register}/>
         <Route path='/sign-in' component={Login}/>
         <Route path='/membership/success' component={ConfirmedMembership}/>
-        <Route path='/clearance' component={Clearance}/>
+        <Route path='/clearance'>
+          <Clearance shoeList={clearanceShoes}/>
+        </Route>
         <Route path='/cart' component={Clearance}/>
         <Route path='/shoe/:id'>
           <Shoe key={shoeList.id} shoeList={shoeList}/>

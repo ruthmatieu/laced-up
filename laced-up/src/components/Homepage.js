@@ -3,6 +3,10 @@ import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import {latestAndGreatest} from '../data';
 import { useParams } from "react-router-dom";
+import styled from 'styled-components';
+import breakpoint from '../breakpoints';
+import heroLeft from '../images/desktop-bg-hero-two.png';
+import heroRight from '../images/desktop-bg-hero.png';
 
 
 //components
@@ -44,20 +48,30 @@ const Homepage = ({shoeList}) => {
 
   
   return (
-    <section>
+    <HomeSection>
       <div style={{backgroundColor: '#F7F7F7', padding: '10px 0'}}>
           <p style={{margin: '0', textTransform: 'uppercase'}}>Free shipping & 60-Day Free return</p>
           <Link to='/membership' style={{color: 'black', fontSize: '13px'}}>Join Now</Link>
       </div>
       <div style={{margin: '0 15px'}}>
-        <video loop autoPlay muted style={{width: '100%'}}>
+        <video loop autoPlay muted style={{width: '100%'}} className='mobile-hero'>
           <source src= { hero } type="video/mp4" />
         </video>
 
+        <section className='desktop-hero'>
+          <div className='hero-left'>
+            <h1 style={{ textAlign: 'left', fontFamily: `'Oswald', sans-serif`, textTransform: 'uppercase', margin: '0', lineHeight: '45px'}}>new year,<br/>new energy.</h1>
+            <p>Take on anything the new year throws your way in<br/>these functional styles.</p>
+            <Link to='/new-releases'><button className='hero-btn'>Shop</button></Link>
+          </div>
+          <div className='hero-right'>
+            two
+          </div>
+        </section>
         <section>
           <div style={{padding:'10px 0 15px 0', textAlign: 'left'}}>
-            <h1 style={{fontFamily: `'Oswald', sans-serif`, fontSize: '45px', textTransform: 'uppercase', margin: '0', lineHeight: '45px'}}>new year,<br/>new energy.</h1>
-            <p>Take on anything the new year throws your way in<br/>these functional styles.</p>
+            <h1 className='mobile-hero' style={{fontFamily: `'Oswald', sans-serif`, fontSize: '45px', textTransform: 'uppercase', margin: '0', lineHeight: '45px'}}>new year,<br/>new energy.</h1>
+            <p className='mobile-hero'>Take on anything the new year throws your way in<br/>these functional styles.</p>
             <div style={{display: 'flex', justifyContent: 'center', width: '100%', paddingBottom: '30px'}}>
               <img src={one} alt='' style={{width: '50%', marginRight:'2px'}}/>
               <img src={two} alt='' style={{width: '50%', marginLeft:'2px'}}/>
@@ -110,19 +124,102 @@ const Homepage = ({shoeList}) => {
 
             <div>
               <Link to='/membership'><button style={{marginRight: '10px'}}>Join Us</button></Link>
-              <Link to='/membership'><button>Join Us</button></Link>
+              <Link to='/sign-in'><button>Logn In</button></Link>
             </div>
 
           </div>
         </section>
       </div>
     <Footer/>
-  </section>
+  </HomeSection>
   );
 }
 
 export default Homepage;
 
-const dragImages = () => {
 
-}
+
+const HomeSection = styled.section`
+  .mobile-hero {
+    display: block;
+  }
+
+  .desktop-hero {
+    display: none;
+  }
+
+  @media only screen and ${breakpoint.device.tablet} {
+    background-color: yellow;
+
+    .mobile-hero {
+      display: none;
+      
+    }
+
+    .desktop-hero {
+      display: block;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 130px;
+    }
+
+    .hero-left {
+      background-image: url(${heroRight});
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 50%;
+      height: 500px;
+      position: relative;
+    }
+
+    .hero-left h1 {
+      position: absolute;
+      top: 50px;
+      left: 25px;
+      font-size: 45px;
+    }
+
+    .hero-left p {
+      position: absolute;
+      text-align: left;
+      top: 140px;
+      left: 25px;
+    }
+
+    .hero-btn {
+      position: absolute;
+      text-align: left;
+      top: 230px;
+      left: 25px;
+    }
+
+    .hero-right {
+      background-image: url(${heroLeft});
+      width: 50%;
+      height: 500px;
+    }
+  }
+
+  @media only screen and ${breakpoint.device.desktop} {
+    background-color: red;
+
+    .mobile-hero {
+      display: none;
+    }
+
+    .hero-left h1 {
+      position: absolute;
+      top: 50px;
+      left: 25px;
+      font-size: 90px;
+    }
+
+    .hero-right {
+      height: 100vh;
+    }
+
+    .hero-left {
+      height: 100vh;
+    }
+  }
+`;

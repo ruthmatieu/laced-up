@@ -3,6 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import * as yup from 'yup';
 import styled from 'styled-components';
 
+import Footer from './Footer';
 import logo from '../images/logo.png';
 
 const data = {
@@ -34,7 +35,7 @@ const formSchema = yup.object().shape({
         .required('Password does not meet minimal requirements.')
         .min(5, '5 characters minimum required.'),
     firstName: yup.string()
-        .required('Please enter a valid first name..'),
+        .required('Please enter a valid first name.'),
     lastName: yup.string()
         .required('Please enter a valid last name.'),
     dob: yup.number()
@@ -96,13 +97,14 @@ const Register = () => {
     
 
     return (
-        <Wrapper onSubmit={submitHandler}>
-            <form style={{padding: '30px'}}>
+        <Wrapper >
+            <form onSubmit={submitHandler} style={{margin: '30px'}}>
                 <img src={logo} alt='company logo' style={{width: '35px'}}/>
                 <h2 style={{textTransform: 'uppercase'}}>Become a Lace Up member</h2>
                 <p style={{fontSize: '14px', color: '#767676', lineHeight: '20px'}}>Create your Lace Up Member profile and get first <br/>access 
                     to the very best of Lace Up products, <br/>inspiration and community.
                 </p>
+                <div className='input-wrapper'>
                 <label htmlFor='email'>
                     <input
                         type='email'
@@ -112,7 +114,7 @@ const Register = () => {
                         onChange={changeHandler}
                         placeholder='Email address'
                     />
-                    {(errorState.email.length > 0) ? <p>{errorState.email}</p>: null}
+                    {(errorState.email.length > 0) ? <p className='error'>{errorState.email}</p>: null}
                 </label>
                 <br/>
                 <label htmlFor='password'>
@@ -124,7 +126,7 @@ const Register = () => {
                         onChange={changeHandler}
                         placeholder='Password'
                     />
-                    {(errorState.password.length > 0) ? <p>{errorState.password}</p>: null}
+                    {(errorState.password.length > 0) ? <p className='error'>{errorState.password}</p>: null}
                 </label>
                 <br/>
                 <label htmlFor='firstName'>
@@ -136,7 +138,7 @@ const Register = () => {
                         onChange={changeHandler}
                         placeholder='First Name'
                     />
-                    {(errorState.firstName.length > 0) ? <p>{errorState.firstName}</p>: null}
+                    {(errorState.firstName.length > 0) ? <p className='error'>{errorState.firstName}</p>: null}
                 </label>
                 <br/>
                 <label htmlFor='lastName'>
@@ -148,7 +150,7 @@ const Register = () => {
                         onChange={changeHandler}
                         placeholder='Last Name'
                     />
-                    {(errorState.lastName.length > 0) ? <p>{errorState.lastName}</p>: null}
+                    {(errorState.lastName.length > 0) ? <p className='error'>{errorState.lastName}</p>: null}
                 </label>
                 <br/>
                 <label htmlFor='dob'>
@@ -159,12 +161,16 @@ const Register = () => {
                         value={form.dob}
                         onChange={changeHandler}
                         placeholder='Date of Birth'
+                        autoComplete='off'
+                        autoCorrect='off'
+                        autoCapitalize='off'
+                        spellCheck='false'
                     />
-                    {(errorState.dob.length > 0) ? <p>{errorState.dob}</p>: null}
+                    {(errorState.dob.length > 0) ? <p className='error'>{errorState.dob}</p>: null}
                 </label>
                 <p style={{fontSize: '13px', color: '#767676'}}>Get a Lace Up Member Reward every year on your Birthday.</p>
                 <br/>
-                <label htmlFor='country'>
+                <label htmlFor='country' className='country'>
                     <select name="country" id="country">
                         <option value="0" label="Select a country ... " selected="selected">Select a country ... </option>
                         <optgroup id="country-optgroup-Africa" label="Africa">
@@ -432,7 +438,7 @@ const Register = () => {
                         </optgroup>
                         
                     </select>
-                    {(errorState.location.length > 0) ? <p>{errorState.location}</p>: null}
+                    {(errorState.location.length > 0) ? <p className='error'>{errorState.location}</p>: null}
                 </label>
                 <br/>
                 <label htmlFor='male'>
@@ -457,25 +463,32 @@ const Register = () => {
                         onChange={changeHandler}
                     />
                     Female
-                    {(errorState.gender.length > 0) ? <p>{errorState.gender}</p>: null}
+                    {(errorState.gender.length > 0) ? <p className='error'>{errorState.gender}</p>: null}
                 </label>
                 <br/>
-                <label htmlFor='updates'>
-                    <input
-                        type='checkbox'
-                        id='updates'
-                        name='updates'
-                        value={form.updates}
-                        onChange={changeHandler}
-                    />
-                    <p style={{fontSize: '12px', color: '#767676'}}>Sign up for emails to get updates from Nike on products, offers, and your Member benefits</p>
-                    {(errorState.updates.length > 0) ? <p>{errorState.updates}</p>: null}
-                </label>
-                <br/>
-                <p>By creating an account, you agree to Lace Up's Privacy Policy and Terms of Use.</p>
-                <button type='submit'>Join us</button>
-                <p>Already a member? <Link to='/sign-in'>Log in</Link>.</p>
+                <div style={{display: 'flex'}}>
+                    <label htmlFor='updates'>
+                        <input
+                            className='aye'
+                            type='checkbox'
+                            id='updates'
+                            name='updates'
+                            value={form.updates}
+                            onChange={changeHandler}
+                        />
+                        
+                        {/* {(errorState.updates.length > 0) ? <p className='error'>{errorState.updates}</p>: null} */}
+                    </label>
+                    
+                    <p style={{fontSize: '12px', color: '#767676', margin: '0', textAlign: 'left', paddingLeft: '20px'}}>Sign up for emails to get updates from Nike on products, offers, and your Member benefits</p>
+                </div>
+                </div>
+                <br/> 
+                <p style={{fontSize: '13px', color: '#767676'}}>By creating an account, you agree to Lace Up's Privacy Policy and Terms of Use.</p>
+                <button type='submit' className='submit'>Join us</button>
+                <p style={{fontSize: '13px', color: '#767676'}}>Already a member? <Link to='/sign-in' style={{color: '#000'}}>Log in</Link>.</p>
             </form>
+            <Footer/>
         </Wrapper>
     )
 }
@@ -483,12 +496,84 @@ const Register = () => {
 export default Register;
 
 const Wrapper = styled.div`
-    margin: 0 15px;
+    margin: 0 30px;
 
-    input {
-        width: 300px;
-        height: 35px;
-        margin-bottom: 10px;
-        border: 1px solid #E5E5E5;
+    label {
+        display: grid;
+        place-items: center;
     }
+
+    input[type='text'] {
+        width: 100%;
+        height: 40px;
+        border: 1px solid #E5E5E5;
+        border-radius: 3px;
+        padding: 0 16px;
+        color: #E5E5E5;
+
+    }
+
+    input[type='email'] {
+        width: 100%;
+        height: 40px;
+        border: 1px solid #E5E5E5;
+        border-radius: 3px;
+        padding: 0 16px;
+    }
+
+    input[type='password'] {
+        width: 100%;
+        height: 40px;
+        border: 1px solid #E5E5E5;
+        border-radius: 3px;
+        padding: 0 16px;
+    }
+
+    input[type='date'] {
+        width: 100%;
+        height: 40px;
+        border: 1px solid #E5E5E5;
+        border-radius: 3px;
+        padding: 0 16px;
+        
+    }
+
+    input[type="date"]:before {
+        content: attr(placeholder) !important;
+      }
+      input[type="date"]:focus:before,
+      input[type="date"]:valid:before {
+        content: '';
+      }
+
+    .country {
+        display: grid;
+        place-items: center;
+    }
+    select {
+        max-width: 100%;
+        height: 40px;
+        border: 1px solid #E5E5E5;
+        border-radius: 3px;
+        padding: 0 16px;
+    }
+
+      .error {
+          margin: 0;
+          color: red;
+          font-size: 13px;
+          text-align: left;
+      }
+
+      .submit {
+        border: 1px solid #E5E5E5;
+        background-color: black;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: white;
+        border-radius: 5px;
+        padding: 12px 0;
+        Width: 100%;
+      }
 `;
