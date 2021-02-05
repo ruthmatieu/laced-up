@@ -13,6 +13,63 @@ import twelve from './images/products/twelve.png';
 import thirteen from './images/products/thirteen.png';
 import fourteen from './images/products/fourteen.png';
 
+export const latestAndGreatest = [
+    {
+        id: 1,
+        name: 'Nike Air Force 1',
+        subTitle: `Men's Shoe`,
+        image: one,
+        price: 85,
+        availability: '2 colors',
+        description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
+    },
+    {
+        id: 2,
+        name: 'Nike Air',
+        subTitle: `Men's Shoe`,
+        image: two,
+        availability: '2 colors',
+        price: 85,
+        description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
+    },
+    {
+        id: 3,
+        name: 'Nike Air Force 1',
+        subTitle: `Men's Shoe`,
+        image: three,
+        availability: '3 colors',
+        price: 85,
+        description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
+    },
+    {
+        id: 4,
+        name: 'Nike Air Force 1',
+        subTitle: `Men's Shoe`,
+        image: four,
+        availability: '5 colors',
+        price: 85,
+        description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
+    },
+    {
+        id: 5,
+        name: 'Nike Air Force 1',
+        subTitle: `Men's Shoe`,
+        image: five,
+        availability: '3 colors',
+        price: 85,
+        description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
+    },
+    {
+        id: 6,
+        name: 'Nike Air Force 1',
+        subTitle: `Men's Shoe`,
+        image: six,
+        availability: '2 colors',
+        price: 85,
+        description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
+    }
+]
+
 export const allShoes = [
     {
         id: 1,

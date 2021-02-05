@@ -15,8 +15,7 @@ const AllShoes = (props) => {
                 return(
                 <div key={item.id} style={{justifyContent: 'space-between', width: '50vw'}}>
                     <div style={{padding: '0 3px 20px 3px', textAlign: 'left'}}>
-                        <Link to={`/shoe/${item.id}`}><img src={item.image} alt={item.name} style={{width: '100%'}}/>
-                        </Link>
+                        <Link to={`/shoe/${item.id}`}><img src={item.image} alt={item.name} style={{width: '100%'}}/></Link>
                         <div style={{paddingLeft: '10px'}}>
                             <p style={{margin: '0', paddingTop: '5px', fontWeight: '700'}}>{item.name}</p>
                             <p style={{margin: '0', color: '#767676'}}>{item.subTitle}</p>

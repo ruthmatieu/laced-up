@@ -36,8 +36,10 @@ const formSchema = yup.object().shape({
         .required('Please enter a valid last name.'),
     dob: yup.number()
         .required('Please enter a valid date of birth.'),
-    
-        
+    location: yup.number(),
+    gender: yup.string()
+        .required('Please select a gender.'),
+    updates: yup.boolean()
 });
 
 const Register = () => {
@@ -63,7 +65,7 @@ const Register = () => {
                 })
             })
     }
-
+//
     const changeHandler = e => {
         e.persist();
         validation(e);
@@ -156,7 +158,7 @@ const Register = () => {
                         onChange={changeHandler}
                         placeholder='Date of Birth'
                     />
-                    {(errorState.password.length > 0) ? <p>{errorState.password}</p>: null}
+                    {(errorState.dob.length > 0) ? <p>{errorState.dob}</p>: null}
                 </label>
                 <p>Get a Lace Up Member Reward every year on your Birthday.</p>
                 <br/>
@@ -428,7 +430,7 @@ const Register = () => {
                         </optgroup>
                         
                     </select>
-                    {(errorState.password.length > 0) ? <p>{errorState.password}</p>: null}
+                    {(errorState.location.length > 0) ? <p>{errorState.location}</p>: null}
                 </label>
                 <br/>
                 <label htmlFor='male'>
@@ -436,22 +438,24 @@ const Register = () => {
                         type='radio'
                         id='male'
                         name='gender'
+                        checked=''
                         value={form.gender}
                         onChange={changeHandler}
                     />
                     Male
-                    {(errorState.password.length > 0) ? <p>{errorState.password}</p>: null}
+                    {/* {(errorState.gender.length > 0) ? <p>{errorState.gender}</p>: null} */}
                 </label>
                 <label htmlFor='female'>
                     <input
                         type='radio'
                         id='female'
                         name='gender'
+                        checked=''
                         value={form.gender}
                         onChange={changeHandler}
                     />
                     Female
-                    {(errorState.password.length > 0) ? <p>{errorState.password}</p>: null}
+                    {(errorState.gender.length > 0) ? <p>{errorState.gender}</p>: null}
                 </label>
                 <br/>
                 <label htmlFor='updates'>
@@ -463,7 +467,7 @@ const Register = () => {
                         onChange={changeHandler}
                     />
                     Sign up for emails to get updates from Nike on products, offers, and your Member benefits
-                    {(errorState.password.length > 0) ? <p>{errorState.password}</p>: null}
+                    {(errorState.updates.length > 0) ? <p>{errorState.updates}</p>: null}
                 </label>
                 <br/>
                 <p>By creating an account, you agree to Lace Up's Privacy Policy and Terms of Use.</p>

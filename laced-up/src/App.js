@@ -126,11 +126,11 @@ const Nav = styled.nav `
 
         <nav className='mobile__nav'>
           <Link to='/'><img src={logo} alt='company logo' className='logo'/></Link>
-          <div class="mobile__menu__container">
-            <div class="menu-icon">
-              <span class="line-1"></span>
-              <span class="line-2"></span>
-              <span class="line-3"></span>
+          <div className="mobile__menu__container">
+            <div className="menu-icon">
+              <span className="line-1"></span>
+              <span className="line-2"></span>
+              <span className="line-3"></span>
               <p onClick={menuHandler}>XXXXX</p>
             </div>
           </div>
@@ -143,7 +143,9 @@ const Nav = styled.nav `
 
     
       <Switch>
-        <Route exact path='/' component={Homepage}/>
+        <Route exact path='/'>
+          <Homepage shoeList={shoeList}/>
+        </Route>
         <Route path='/new-releases' component={NewReleases}/>
         <Route path='/mens-shoes' component={MensShoes}/>
         <Route path='/womens-shoes' component={WomensShoes}/>
