@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import * as yup from 'yup';
+import styled from 'styled-components';
+
+import logo from '../images/logo.png';
 
 const data = {
     email: '',
@@ -93,13 +96,12 @@ const Register = () => {
     
 
     return (
-        <div onSubmit={submitHandler}>
-            <form>
-                <img src='' alt='company logo'/>
-                <h1>Become a Lace Up member</h1>
-                <p>Create your Lace Up Member profile and get first access 
-                    to the very best of Lace Up products, inspiration and 
-                    community.
+        <Wrapper onSubmit={submitHandler}>
+            <form style={{padding: '30px'}}>
+                <img src={logo} alt='company logo' style={{width: '35px'}}/>
+                <h2 style={{textTransform: 'uppercase'}}>Become a Lace Up member</h2>
+                <p style={{fontSize: '14px', color: '#767676', lineHeight: '20px'}}>Create your Lace Up Member profile and get first <br/>access 
+                    to the very best of Lace Up products, <br/>inspiration and community.
                 </p>
                 <label htmlFor='email'>
                     <input
@@ -160,7 +162,7 @@ const Register = () => {
                     />
                     {(errorState.dob.length > 0) ? <p>{errorState.dob}</p>: null}
                 </label>
-                <p>Get a Lace Up Member Reward every year on your Birthday.</p>
+                <p style={{fontSize: '13px', color: '#767676'}}>Get a Lace Up Member Reward every year on your Birthday.</p>
                 <br/>
                 <label htmlFor='country'>
                     <select name="country" id="country">
@@ -466,7 +468,7 @@ const Register = () => {
                         value={form.updates}
                         onChange={changeHandler}
                     />
-                    Sign up for emails to get updates from Nike on products, offers, and your Member benefits
+                    <p style={{fontSize: '12px', color: '#767676'}}>Sign up for emails to get updates from Nike on products, offers, and your Member benefits</p>
                     {(errorState.updates.length > 0) ? <p>{errorState.updates}</p>: null}
                 </label>
                 <br/>
@@ -474,8 +476,19 @@ const Register = () => {
                 <button type='submit'>Join us</button>
                 <p>Already a member? <Link to='/sign-in'>Log in</Link>.</p>
             </form>
-        </div>
+        </Wrapper>
     )
 }
 
 export default Register;
+
+const Wrapper = styled.div`
+    margin: 0 15px;
+
+    input {
+        width: 300px;
+        height: 35px;
+        margin-bottom: 10px;
+        border: 1px solid #E5E5E5;
+    }
+`;
