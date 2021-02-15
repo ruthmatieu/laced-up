@@ -26,7 +26,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import ConfirmedMembership from './components/ConfirmedMembership';
 import Cart from './components/Cart';
-import Menu from './components/mobile menu/Menu';
+//import Menu from './components/mobile menu/Menu';
 //images
 import logo from './images/logo.png';
 
@@ -41,17 +41,17 @@ const [newRelease] = useState(latestAndGreatest);
 const [clearanceShoes] = useState(clearance);
 
 //shopping cart state
-  const [cartItems, setCartItems] = useState([]);
-  const onAdd = (product) => {
-    const exist = cartItems.find(item => item.id === product.id);
-    if(exist) {
-      setCartItems(cartItems.map())
-    }
-  }
+  const [cartItems] = useState([]);
+  // const onAdd = (product) => {
+  //   const exist = cartItems.find(item => item.id === product.id);
+  //   if(exist) {
+  //     setCartItems(cartItems.map())
+  //   }
+  // }
 
-  const menuHandler = () => {
+  // const menuHandler = () => {
 
-  }
+  // }
 
   return (
     <Wrapper className="App">
