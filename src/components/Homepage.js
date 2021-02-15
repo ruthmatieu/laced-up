@@ -66,7 +66,7 @@ const Homepage = ({shoeList}) => {
             <Link to='/new-releases'><button className='hero-btn'>Shop</button></Link>
           </div>
           <div className='hero-right'>
-            two
+            {/* containes the image of the man */}
           </div>
         </section>
 

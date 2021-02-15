@@ -69,10 +69,11 @@ const CartBtn = styled.button`
     Width: 100%;
 
     @media only screen and ${breakpoint.device.desktop} {
-        border: 1px solid #E5E5E5;
-        background-color: white;
-        color: black;
+        border: 1px solid black;
+        background-color: black;
+        color: white;
         padding: 18px 50px;
         border-radius: 5px;
+        width: 50%;
     }
 `

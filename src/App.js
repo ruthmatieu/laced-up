@@ -68,8 +68,8 @@ const [clearanceShoes] = useState(clearance);
                 <Link to='/all-shoes' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 5px'}}><p>All Shoes</p></Link>
               </div>
               <div className='menu__btns'>
-                  <Link to='/membership'><button>Join us</button></Link>
-                  <Link to='/sign-in'><button>Sign in</button></Link>
+                  <Link to='/membership'><button className='nav-btn'>Join us</button></Link>
+                  <Link to='/sign-in'><button className='nav-btn'>Sign in</button></Link>
               </div>
             </div>
         </nav>
@@ -191,7 +191,7 @@ const Wrapper = styled.div`
         display: block;
         display: flex;
         justify-content: space-between;
-        padding: 10px 0;
+        padding: 10px 80px;
         align-items: center;
       }
 
@@ -207,6 +207,10 @@ const Wrapper = styled.div`
       }
   
       .menu__btns {
+      }
+      
+      .nav-btn {
+        margin-left: 10px;
       }
     }
   `;
