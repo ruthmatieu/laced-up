@@ -138,7 +138,7 @@ const Login = () => {
 export default Login;
 
 const Wrapper = styled.div`
-    margin: 0 30px;
+    margin: 100px 30px 150px 30px;
 
     label {
         display: grid;
