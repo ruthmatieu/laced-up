@@ -17,7 +17,7 @@ import one from '../images/products/new-release-collection-1.png';
 import two from '../images/products/new-release-collection-2.png';
 import three from '../images/products/im.png';
 import four from '../images/products/fourteen-new.png';
-import hero from '../images/videos/hero.mp4';
+import hero from '../images/hero.png';
 import logo from '../images/logo-v-2.png';
 
 const Homepage = ({shoeList}) => {
@@ -54,9 +54,9 @@ const Homepage = ({shoeList}) => {
           <Link to='/membership' style={{color: 'black', fontSize: '13px'}}>Join Now</Link>
       </div>
       <div style={{margin: '0 15px'}}>
-        <video loop autoPlay muted style={{width: '100%'}} className='mobile-hero'>
-          <source src= { hero } type="video/mp4" />
-        </video>
+        <div className='mobile-hero'>
+          <img src= { hero } alt='hero image' style={{width: '100%'}}/>
+        </div>
 
         <section className='desktop-hero'>
           <div className='hero-left'>
