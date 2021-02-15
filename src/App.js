@@ -90,7 +90,7 @@ const [clearanceShoes] = useState(clearance);
               <MenuLink to='/all-shoes'>Help</MenuLink>
             </div>
           </div>
-          <GrClose className='closed-menu'/>
+          <GrClose size={60} className='closed-menu'/>
         </nav>
 
       </header>
@@ -157,7 +157,6 @@ const Wrapper = styled.div`
 
     .open-menu {
       cursor: pointer;
-      color: red;
     }
 
     .closed-menu {
@@ -208,7 +207,7 @@ const Wrapper = styled.div`
   
       .menu__btns {
       }
-      
+
       .nav-btn {
         margin-left: 10px;
       }

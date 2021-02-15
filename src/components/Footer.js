@@ -35,4 +35,13 @@ const Footer = () => {
     @media only screen and ${breakpoint.device.tablet} {
 
     }
+
+    @media only screen and ${breakpoint.device.desktop} {
+      li {
+        text-transform: uppercase;
+        list-style: none;
+        text-align: left;
+        padding: 10px 0;
+      }
+    }
   }`
