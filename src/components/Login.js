@@ -76,10 +76,11 @@ const Login = () => {
     
 
     return (
+        <div>
         <Wrapper>
             <form onSubmit={submitHandler}>
                 <img src={logo} alt='company logo' style={{width: '35px'}}/>
-                <h2 style={{textTransform: 'uppercase'}}>Your account for<br/> everything Lace Up</h2>
+                <h2 style={{textTransform: 'uppercase'}}>Your account for<br/> everything Laced Up</h2>
                 <div className='input-wrapper'>
                 <label htmlFor='email'>
                     <input
@@ -126,8 +127,11 @@ const Login = () => {
                 <button type='submit' className='submit'>Sign in</button>
                 <p style={{fontSize: '13px', color: '#767676'}}>Not a member? <Link to='/membership' style={{color: '#000'}}>Join Us</Link>.</p>
             </form>
-            <Footer/>
+            
         </Wrapper>
+        
+            <Footer/>
+        </div>
     )
 }
 

@@ -27,6 +27,7 @@ const sizes = [
     
     return (
         <div>
+            <div>
             <div style={{margin: '0 15px'}}>
                 <p>Select size</p>
                 {sizes.map(item => {
@@ -35,8 +36,9 @@ const sizes = [
             </div>
 
             <Link to='/cart'><CartBtn>Add to Bag</CartBtn></Link>
-            <Footer/>
-           
+            
+
+            </div>           
         </div>
     )
 }

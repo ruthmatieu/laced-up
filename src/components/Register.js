@@ -97,6 +97,7 @@ const Register = () => {
     
 
     return (
+        <div>
         <Wrapper >
             <form onSubmit={submitHandler} style={{margin: '30px'}}>
                 <img src={logo} alt='company logo' style={{width: '35px'}}/>
@@ -488,8 +489,11 @@ const Register = () => {
                 <button type='submit' className='submit'>Join us</button>
                 <p style={{fontSize: '13px', color: '#767676'}}>Already a member? <Link to='/sign-in' style={{color: '#000'}}>Log in</Link>.</p>
             </form>
-            <Footer/>
+            
         </Wrapper>
+        
+            <Footer/>
+        </div>
     )
 }
 

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import breakpoint from '../breakpoints';
 
 import ShoeSize from './ShoeSize';
+import Footer from './Footer';
 
 const Shoe = ({shoeList}) => {
     
@@ -57,8 +58,7 @@ const Shoe = ({shoeList}) => {
                     </div>
                 </div>
             </Container>
-
-           
+            <Footer/>
         </div>
     )
 }
