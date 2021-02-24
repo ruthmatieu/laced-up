@@ -5,6 +5,7 @@ import breakpoint from '../breakpoints';
 const Footer = () => {
     return (
       <Container>
+        <div className='width-container'>
         <ul>
           <li>Gift cards</li>
           <li>promotions</li>
@@ -14,6 +15,7 @@ const Footer = () => {
           <li>laced up journal</li>
           <li>send us feedback</li>
         </ul>
+        </div>
       </Container>
     );
   }
@@ -24,6 +26,11 @@ const Footer = () => {
   background-color: #111111;
   color: #FFF;
   padding: 50px 0;
+
+  .width-container {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
 
   li {
     text-transform: uppercase;
