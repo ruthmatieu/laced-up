@@ -5,7 +5,7 @@ import {latestAndGreatest} from '../data';
 import { useParams } from "react-router-dom";
 import styled from 'styled-components';
 import breakpoint from '../breakpoints';
-import heroLeft from '../images/desktop-bg-hero-two.svg';
+import heroLeft from '../images/desktop-bg-hero-two.png';
 import heroRight from '../images/desktop-bg-hero.png';
 
 
@@ -13,12 +13,12 @@ import heroRight from '../images/desktop-bg-hero.png';
 import NewItem from './NewItem';
 
 //images
-import one from '../images/products/new-release-collection-1.png';
-import two from '../images/products/new-release-collection-2.png';
+import one from '../images/products/new-release-collection-2.png';
+import two from '../images/products/new-release-collection-1.png';
 import three from '../images/products/im.png';
 import four from '../images/products/fourteen-new.png';
 import hero from '../images/hero.png';
-import logo from '../images/logo-v-2.png';
+import logo from '../images/logo.png';
 
 const Homepage = ({shoeList}) => {
 
@@ -73,9 +73,13 @@ const Homepage = ({shoeList}) => {
             </div>
           </section>
 
-          <div>
-            omg what is this
-          </div>
+          {/* <div className='second-text-div'>
+            <div>
+              <p>find that<br/>fleece feeling</p>
+              <p>something something seomtiing</p>
+              <button>Shop</button>
+            </div>
+          </div> */}
 
           <section>
             <div style={{padding:'10px 0 15px 0', textAlign: 'left'}}>
@@ -129,7 +133,7 @@ const Homepage = ({shoeList}) => {
               <Link to='/new-releases'><button>Shop All</button></Link>
             </div> 
 
-            <div style={{margin: '130px 0 130px 20px', textAlign: 'left'}}>
+            <div style={{margin: '130px 0 130px 20px', textAlign: 'center'}}>
               <img src={logo} alt='company logo' style={{width: '80px'}}/>
               <p style={{fontSize: '55px', fontFamily: `'IBM Plex Serif', serif`, lineHeight: '50px'}}>Where <br/>All Athletes <br/>Belong.</p>
 
@@ -169,6 +173,12 @@ const HomeSection = styled.section`
   .desktop-hero {
     display: none;
   }
+
+  // .second-text-div {
+  //     font-family: Oswald, sans-serif;
+  //     text=transform: uppercase;
+  //     margin: 0;
+  //   }
 
   @media only screen and ${breakpoint.device.tablet} {
     //background-color: yellow;
@@ -271,11 +281,11 @@ const HomeSection = styled.section`
     }
 
     .hero-right {
-      height: 100vh;
+      height: 800px;
     }
 
     .hero-left {
-      height: 100vh;
+      height: 800px;
     }
   }
 `;

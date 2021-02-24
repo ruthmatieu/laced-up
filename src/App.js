@@ -136,6 +136,11 @@ export default App;
 
 const Wrapper = styled.div`
 
+  // nav {
+  //   width: 1920px;
+  //   margin: 0 auto;
+  // }
+
     .logo {
       width: 50px;
       margin-left: 15px;
