@@ -73,14 +73,6 @@ const Homepage = ({shoeList}) => {
             </div>
           </section>
 
-          {/* <div className='second-text-div'>
-            <div>
-              <p>find that<br/>fleece feeling</p>
-              <p>something something seomtiing</p>
-              <button>Shop</button>
-            </div>
-          </div> */}
-
           <section>
             <div style={{padding:'10px 0 15px 0', textAlign: 'left'}}>
               <h1 className='mobile-hero' style={{fontFamily: `'Oswald', sans-serif`, fontSize: '45px', textTransform: 'uppercase', margin: '0', lineHeight: '45px'}}>new year,<br/>new energy.</h1>
@@ -92,19 +84,48 @@ const Homepage = ({shoeList}) => {
               <Link to='/new-releases'><button>Shop</button></Link>
             </div>
             
-          <div className='mobile-trending'>
             <h2 style={{textAlign: 'left', marginTop: '70px'}}>Trending Now</h2>
-              {shoes.map(item => {
-                return <NewItem 
-                  key={item.id}
-                  image={item.image}
-                  description={item.description}
-                  cta={item.cta}
-                  link={item.link}
-                  name={item.name}
-                />
-              })}
-            </div>
+             
+              
+
+
+              {/* <section>
+                    {props.shoeList.map(item => {
+                        return(
+                        <div className='shoe-info-wrapper' key={item.id}>
+                            <div className='shoe-info-sub-wrapper'>
+                                <Link to={`/shoe/${item.id}`}><img src={item.image} alt={item.name}/></Link>
+                                <div className='descriptions'>
+                                    <p className='bold-desc'>{item.name}</p>
+                                    <p className='thin-desc'>{item.subTitle}</p>
+                                    <p className='thin-desc'>{item.availability}</p>
+                                    <p className='bold-desc'>${item.price}</p>
+                                </div>
+                            </div>
+                        </div>)
+                    })}
+             
+              </section> */}
+
+          </section>
+
+          <section style={{}}>
+                  {shoes.map(item => {
+                    return (
+                      <div>
+                        <NewItem 
+                        
+                          key={item.id}
+                          image={item.image}
+                          description={item.description}
+                          cta={item.cta}
+                          link={item.link}
+                          name={item.name}
+                        />
+                      </div>
+                    )
+                  })}
+              
           </section>
 
 
@@ -249,6 +270,10 @@ const HomeSection = styled.section`
     .hero-left {
       height: 800px;
       margin: 0;
+    }
+
+    .trending {
+      display: flex;
     }
 
     
