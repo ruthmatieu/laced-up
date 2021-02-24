@@ -48,6 +48,8 @@ const formSchema = yup.object().shape({
 
 const Register = () => {
 
+    document.title = 'LacedUp | Membership';
+
     const history = useHistory();
     const [form, setForm] = useState(data);
     const [errorState, setErrorState] = useState(error)

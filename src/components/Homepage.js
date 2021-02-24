@@ -22,6 +22,8 @@ import logo from '../images/logo-v-2.png';
 
 const Homepage = ({shoeList}) => {
 
+  document.title = 'LacedUp | Stylish Sneakers For Less';
+  
   const params = useParams();
 
     const shoe = shoeList.find(item => `${item.id}` === params.id);

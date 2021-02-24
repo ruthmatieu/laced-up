@@ -32,6 +32,8 @@ const formSchema = yup.object().shape({
 
 const Login = () => {
 
+    document.title = 'LacedUp | My Account';
+
     const history = useHistory();
     const [form, setForm] = useState(data);
     const [errorState, setErrorState] = useState(error)
