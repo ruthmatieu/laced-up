@@ -101,11 +101,11 @@ const Register = () => {
     return (
         <div>
         <Wrapper >
-            <form onSubmit={submitHandler} style={{margin: '30px'}}>
+            <form onSubmit={submitHandler}>
                 <img src={logo} alt='company logo' style={{width: '35px'}}/>
-                <h2 style={{textTransform: 'uppercase'}}>Become a Lace Up member</h2>
-                <p style={{fontSize: '14px', color: '#767676', lineHeight: '20px'}}>Create your Lace Up Member profile and get first <br/>access 
-                    to the very best of Lace Up products, <br/>inspiration and community.
+                <h2 style={{textTransform: 'uppercase'}}>Become a Laced Up member</h2>
+                <p style={{fontSize: '14px', color: '#767676', lineHeight: '20px'}}>Create your Laced Up Member profile and get first <br/>access 
+                    to the very best of Laced Up products, <br/>inspiration and community.
                 </p>
                 <div className='input-wrapper'>
                 <label htmlFor='email'>
@@ -171,7 +171,7 @@ const Register = () => {
                     />
                     {(errorState.dob.length > 0) ? <p className='error'>{errorState.dob}</p>: null}
                 </label>
-                <p style={{fontSize: '13px', color: '#767676'}}>Get a Lace Up Member Reward every year on your Birthday.</p>
+                <p style={{fontSize: '13px', color: '#767676'}}>Get a Laced Up Member Reward every year on your Birthday.</p>
                 <br/>
                 <label htmlFor='country' className='country'>
                     <select name="country" id="country">
@@ -487,7 +487,7 @@ const Register = () => {
                 </div>
                 </div>
                 <br/> 
-                <p style={{fontSize: '13px', color: '#767676'}}>By creating an account, you agree to Lace Up's Privacy Policy and Terms of Use.</p>
+                <p style={{fontSize: '13px', color: '#767676'}}>By creating an account, you agree to Laced Up's Privacy Policy and Terms of Use.</p>
                 <button type='submit' className='submit'>Join us</button>
                 <p style={{fontSize: '13px', color: '#767676'}}>Already a member? <Link to='/sign-in' style={{color: '#000'}}>Log in</Link>.</p>
             </form>

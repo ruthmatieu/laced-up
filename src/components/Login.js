@@ -125,7 +125,7 @@ const Login = () => {
                 
                 
                 <br/>
-                <p style={{fontSize: '13px', color: '#767676'}}>By logging in, you agree to Lace Up's Privacy Policy and Terms of Use.</p>
+                <p style={{fontSize: '13px', color: '#767676'}}>By logging in, you agree to Laced Up's Privacy Policy and Terms of Use.</p>
                 <button type='submit' className='submit'>Sign in</button>
                 <p style={{fontSize: '13px', color: '#767676'}}>Not a member? <Link to='/membership' style={{color: '#000'}}>Join Us</Link>.</p>
             </form>
@@ -140,7 +140,7 @@ const Login = () => {
 export default Login;
 
 const Wrapper = styled.div`
-    padding: 200px 0 150px 0;
+    padding: 150px 0 150px 0;
     max-width: 500px;
     margin: 0 auto;
       

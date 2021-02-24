@@ -62,11 +62,11 @@ const [clearanceShoes] = useState(clearance);
 
             <div className='menu__items' style={{alignItems: 'center', justifyContent: 'space-between'}}>
               <div className='menu__items' style={{alignItems: "center"}}>
-                <Link to='/' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 5px'}}><p>Home</p></Link>
-                <Link to='/new-releases' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 5px'}}><p>New Releases</p></Link>
-                <Link to='/mens-shoes' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 5px'}}><p>Men</p></Link>
-                <Link to='/womens-shoes' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 5px'}}><p>Women</p></Link>
-                <Link to='/all-shoes' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 5px'}}><p>All Shoes</p></Link>
+                <Link to='/' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 15px'}}><p>Home</p></Link>
+                <Link to='/new-releases' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 15px'}}><p>New Releases</p></Link>
+                <Link to='/mens-shoes' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 15px'}}><p>Men</p></Link>
+                <Link to='/womens-shoes' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 15px'}}><p>Women</p></Link>
+                <Link to='/all-shoes' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 15px'}}><p>All Shoes</p></Link>
               </div>
               <div className='menu__btns'>
                   <Link to='/membership'><button className='nav-btn'>Join us</button></Link>
@@ -193,11 +193,16 @@ const Wrapper = styled.div`
         display: none;
         
       }
+
+      .logo {
+        margin-left: 0;
+      }
+
       .desktop__nav {
         display: block;
         display: flex;
         justify-content: space-between;
-        padding: 10px 80px;
+        padding: 10px 20px;
         align-items: center;
       }
 

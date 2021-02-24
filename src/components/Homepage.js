@@ -56,7 +56,7 @@ const Homepage = ({shoeList}) => {
             <p style={{margin: '0', textTransform: 'uppercase'}}>Free shipping & 60-Day Free return</p>
             <Link to='/membership' style={{color: 'black', fontSize: '13px'}}>Join Now</Link>
         </div>
-        <div style={{margin: '0 15px'}}>
+        <div clasName='border-margin' style={{margin: '0 20px'}}>
           <div className='mobile-hero'>
             <img src= { hero } alt='hero image' style={{width: '100%'}}/>
           </div>
