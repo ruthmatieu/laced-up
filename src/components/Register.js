@@ -502,7 +502,9 @@ const Register = () => {
 export default Register;
 
 const Wrapper = styled.div`
-margin: 100px 30px 150px 30px;
+    padding: 150px 0 150px 0;
+    max-width: 500px;
+    margin: 0 auto;
 
     label {
         display: grid;

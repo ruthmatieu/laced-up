@@ -57,6 +57,7 @@ const [clearanceShoes] = useState(clearance);
     <Wrapper className="App">
       <header>
       <nav className='desktop__nav'>
+        
             <Link to='/'><img src={logo} alt='company logo' className='logo'/></Link>
 
             <div className='menu__items' style={{alignItems: 'center', justifyContent: 'space-between'}}>
@@ -72,6 +73,7 @@ const [clearanceShoes] = useState(clearance);
                   <Link to='/sign-in'><button className='nav-btn'>Sign in</button></Link>
               </div>
             </div>
+          
         </nav>
 
         <nav className='mobile__nav'>
@@ -136,10 +138,10 @@ export default App;
 
 const Wrapper = styled.div`
 
-  // nav {
-  //   width: 1920px;
-  //   margin: 0 auto;
-  // }
+  .width-container {
+    //max-width: 1920px;
+    //margin: 0 auto;
+  }
 
     .logo {
       width: 50px;
