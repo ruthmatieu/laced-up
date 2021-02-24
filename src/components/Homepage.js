@@ -197,6 +197,7 @@ const HomeSection = styled.section`
 
     .hero-left {
       background-image: url(${heroRight});
+      background-position: 50% 50%;
       background-size: cover;
       background-repeat: no-repeat;
       width: 50%;
@@ -232,11 +233,22 @@ const HomeSection = styled.section`
 
     .hero-right {
       background-image: url(${heroLeft});
+      background-position: 50% 50%;
       background-size: cover;
       background-repeat: no-repeat;
       width: 50%;
       height: 100%;
       position: relative;
+    }
+
+    .hero-right {
+      height: 800px;
+      margin: 0;
+    }
+
+    .hero-left {
+      height: 800px;
+      margin: 0;
     }
 
     
@@ -280,12 +292,6 @@ const HomeSection = styled.section`
       left: 25px;
     }
 
-    .hero-right {
-      height: 800px;
-    }
-
-    .hero-left {
-      height: 800px;
-    }
+    
   }
 `;
