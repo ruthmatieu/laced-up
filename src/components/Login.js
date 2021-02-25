@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import * as yup from 'yup';
 import styled from 'styled-components';
+import breakpoint from '../breakpoints';
 
 import Footer from './Footer';
 import logo from '../images/logo.png';
@@ -141,7 +142,7 @@ export default Login;
 
 const Wrapper = styled.div`
     padding: 150px 0 150px 0;
-    max-width: 500px;
+    max-width: 300px;
     margin: 0 auto;
       
 
@@ -187,5 +188,10 @@ const Wrapper = styled.div`
         border-radius: 5px;
         padding: 12px 0;
         Width: 100%;
+      }
+
+      @media only screen and ${breakpoint.device.tablet} {
+        max-width: 500px;
+        margin: 0 auto;
       }
 `;
