@@ -1,17 +1,17 @@
-import one from './images/products/one.png';
-import two from './images/products/two.png';
-import three from './images/products/three.png';
-import four from './images/products/four.png';
-import five from './images/products/five.png';
-import six from './images/products/six.png';
-import seven from './images/products/seven.png';
-import eight from './images/products/eight.png';
-import nine from './images/products/nine.png';
-import ten from './images/products/ten.png';
+import one from './images/products/one.jpg';
+import two from './images/products/two.jpg';
+import three from './images/products/three.jpg';
+import four from './images/products/four.jpg';
+import five from './images/products/five.jpg';
+import six from './images/products/six.jpg';
+import seven from './images/products/seven.jpg';
+import eight from './images/products/eight.jpg';
+import nine from './images/products/nine.jpg';
+import ten from './images/products/ten.jpg';
 import eleven from './images/products/eleven.png';
-import twelve from './images/products/twelve.png';
-import thirteen from './images/products/thirteen.png';
-import fourteen from './images/products/fourteen.png';
+import twelve from './images/products/seven.png';
+import thirteen from './images/products/eight.png';
+import fourteen from './images/products/five.png';
 
 export const latestAndGreatest = [
     {
