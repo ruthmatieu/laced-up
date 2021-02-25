@@ -6,7 +6,8 @@ import Footer from './Footer';
 
 const NewReleases = (props) => {
     // console.log("items", props);
-    
+    document.title = `LacedUp | Newly Released Shoes`;
+
     return (
         <Wrapper > 
             <h3>New Releases ({props.shoeList.length})</h3>

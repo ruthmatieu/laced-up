@@ -12,6 +12,9 @@ const Shoe = ({shoeList}) => {
     const params = useParams();
 
     const shoe = shoeList.find(item => `${item.id}` === params.id);
+
+    document.title = `LacedUp | ${shoe.name}`;
+    
   console.log("heroes", shoe)
     
     return (

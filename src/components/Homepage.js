@@ -19,7 +19,7 @@ import three from '../images/products/im.png';
 import four from '../images/products/fourteen-new.png';
 import hero from '../images/hero.png';
 import logo from '../images/logo.png';
-
+//
 const Homepage = ({shoeList}) => {
 
   document.title = 'LacedUp | Stylish Sneakers For Less';
@@ -41,7 +41,7 @@ const Homepage = ({shoeList}) => {
     {
       name: '',
       image: four,
-      description: `Love them? Move them. Valentine's Day Pick`,
+      description: `Shrug off grey winter days. Shop spring styles.`,
       cta: 'Shop',
       link: '/clearance',
       id: 2

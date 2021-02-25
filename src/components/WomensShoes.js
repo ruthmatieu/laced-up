@@ -6,7 +6,7 @@ import Footer from './Footer';
 
 const WomensShoes = (props) => {
     // console.log("items", props);
-    
+    document.title = `LacedUp | Women's Shoes`;
     return (
         <Wrapper > 
             <h3>Women's Shoes + Sneakers ({props.shoeList.length})</h3>

@@ -6,6 +6,7 @@ import Footer from './Footer';
 
 const MensShoes = (props) => {
     // console.log("items", props);
+    document.title = `LacedUp | Men's Shoes`;
     
     return (
         <Wrapper > 
@@ -58,6 +59,8 @@ const MensShoes = (props) => {
 export default MensShoes;
 
 const Wrapper = styled.div `
+
+
     margin: '0 3vw';
 
     h3 {
