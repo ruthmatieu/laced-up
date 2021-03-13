@@ -3,8 +3,9 @@ import { Link} from 'react-router-dom';
 import styled from 'styled-components';
 import breakpoint from '../breakpoints';
 import Footer from './Footer';
+import Cart from './Cart';
 
-const ShoeSize = () => {
+const ShoeSize = (props) => {
 
 const sizes = [
     'M 6 / W 7.5',
@@ -21,8 +22,8 @@ const sizes = [
     'M 6.5 / W 8'
 ]
 
-    const addShoeToCart = () => {
-        
+    const addShoeToCart = (id) => {
+        id = props.shoeId
     }
     
     return (
@@ -35,9 +36,8 @@ const sizes = [
                 })}
             </div>
 
-            <Link to='/cart'><CartBtn>Add to Bag</CartBtn></Link>
+            <CartBtn onClick={() => <Cart shoeId={props.shoeId}/>}>Add to Bag</CartBtn>
             
-
             </div>           
         </div>
     )

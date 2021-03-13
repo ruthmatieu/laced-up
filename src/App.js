@@ -42,57 +42,50 @@ const [clearanceShoes] = useState(clearance);
 
 //shopping cart state
   const [cartItems] = useState([]);
-  // const onAdd = (product) => {
-  //   const exist = cartItems.find(item => item.id === product.id);
-  //   if(exist) {
-  //     setCartItems(cartItems.map())
-  //   }
-  // }
 
-  // const menuHandler = () => {
 
-  // }
+  const toggleMenu = (e) => {
+    const links = document.querySelector('.nav-links')
+    e.preventDefault();
+    console.log('The link was clicked.');
+
+      if(links.classList.contains('.nav-links')){
+        links.classList.remove('nav-links');
+        links.classList.add('show-links');
+      } else {
+        links.classList.remove('show-links');
+        links.classList.add('nav-links');
+      }
+    
+  }
 
   return (
     <Wrapper className="App">
       <header>
-      <nav className='desktop__nav'>
-        
-            <Link to='/'><img src={logo} alt='company logo' className='logo'/></Link>
 
-            <div className='menu__items' style={{alignItems: 'center', justifyContent: 'space-between'}}>
-              <div className='menu__items' style={{alignItems: "center"}}>
-                <Link to='/' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 15px'}}><p>Home</p></Link>
-                <Link to='/new-releases' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 15px'}}><p>New Releases</p></Link>
-                <Link to='/mens-shoes' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 15px'}}><p>Men</p></Link>
-                <Link to='/womens-shoes' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 15px'}}><p>Women</p></Link>
-                <Link to='/all-shoes' style={{textDecoration: 'none', color: 'black', fontWeight: '700', padding: '0 15px'}}><p>All Shoes</p></Link>
+        <nav>
+          <div className='nav-center'>
+            <div className='nav-header'>
+              <Link to='/'><img src={logo} alt='Company logo' className='logo'/></Link>
+                
+                <div className='toggle-icon' onClick={toggleMenu}>
+                  <GiHamburgerMenu size={30}/>
+                </div>
+            </div>
+            <div className='nav-links desktop-links'>
+              <div className='nav-items'>
+                <MenuLink to='/'><p>Home</p></MenuLink>
+                <MenuLink to='/new-releases'><p>New Releases</p></MenuLink>
+                <MenuLink to='/mens-shoes'><p>Men</p></MenuLink>
+                <MenuLink to='/womens-shoes'><p>Women</p></MenuLink>
+                <MenuLink to='/all-shoes'><p>All Shoes</p></MenuLink>
               </div>
               <div className='menu__btns'>
-                  <Link to='/membership'><button className='nav-btn'>Join us</button></Link>
-                  <Link to='/sign-in'><button className='nav-btn'>Sign in</button></Link>
+                <MenuLink to='/membership'><button className='nav-btn'>Join us</button></MenuLink>
+                <MenuLink to='/sign-in'><button className='nav-btn'>Sign in</button></MenuLink>
               </div>
             </div>
-          
-        </nav>
-
-        <nav className='mobile__nav'>
-          <Link to='/'><img src={logo} alt='company logo' className='logo'/></Link>
-          <GiHamburgerMenu className='open-menu'/>
-          <div className='main-menu'>
-            <div>
-              <MenuLink to='/new-releases'>New Releases</MenuLink>
-              <MenuLink to='/mens-shoes'>Men</MenuLink>
-              <MenuLink to='/womens-shoes'>Women</MenuLink>
-              <MenuLink to='/all-shoes'>All Shoes</MenuLink>
-            </div>
-            <div className=''>
-              <MenuLink to='/cart'>Bag</MenuLink>
-              <MenuLink to='/womens-shoes'>Favorites</MenuLink>
-              <MenuLink to='/all-shoes'>Help</MenuLink>
-            </div>
           </div>
-          <GrClose size={60} className='closed-menu'/>
         </nav>
 
       </header>
@@ -145,93 +138,87 @@ const Wrapper = styled.div`
 
     .logo {
       width: 50px;
-      margin-left: 15px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .mobile__nav {
-      display: flex;
-      justify-content: space-between;
-    }
+   .nav-header {
+     display: flex;
+     justify-content: space-between;
+   }
+   .desktop-links {
+     display: none;
+   }
 
-    .mobile__nav .logo {
-      width: 45px;
-      padding: 10px 0;
-    }
-
-    .main-menu {
-      display: flex;
-    }
-
-    .open-menu {
-      cursor: pointer;
-    }
-
-    .closed-menu {
-      display: none;
-      cursor: pointer;
-    }
-
-    .main-menu, .closed-menu {
-      display: none;
-    }
-
-    .menu-icon {
-      display: grid;
-      place-items: center;
-      height: 55px;
-      width: 25px;
-      cursor: pointer;
-
-    }
-
-    .desktop__nav {
-      display: none;
-    }
+   .show-links {
+    display: block;
+   }
+    
 
     @media only screen and ${breakpoint.device.desktop} {
-      .mobile__nav {
-        display: none;
-        
+     //background-color: red;
+
+      .nav-header {
+        display: flex;
+        justify-content:
       }
 
       .logo {
-        margin-left: 0;
+        width: 50px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .desktop__nav {
+      .nav-links {
+        //display:none;
+      }
+
+      .nav-center {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .desktop-links {
         display: block;
         display: flex;
-        justify-content: space-between;
-        padding: 10px 20px;
-        align-items: center;
+
       }
 
-      .menu__items {
+      .nav-items {
         display: flex;
-        justify-content: space-between;
         
-      }
-  
-      .menu__items p {
-        margin: 0;
-        
-      }
-  
-      .menu__btns {
       }
 
-      .nav-btn {
-        margin-left: 10px;
+      .toggle-icon {
+        display: none;
+      }
+
+      .menu__btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 50px;
+      }
+
+      .menu__btns button {
+        cursor: pointer;
       }
     }
   `;
 
   const MenuLink = styled(Link)`
-    display: inline-block;
     text-decoration: none;
     color: black;
     padding: 15px;
     text-transform: uppercase;
+    font-weight: 700;
     font-size: 15px;
+
+    @media only screen and ${breakpoint.device.desktop} {
+      
+
+    }
   `
 //

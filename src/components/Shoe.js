@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, useRouteMatch, Route, NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Link} from 'react-router-dom';
 import styled from 'styled-components';
 import breakpoint from '../breakpoints';
@@ -8,7 +8,7 @@ import ShoeSize from './ShoeSize';
 import Footer from './Footer';
 
 const Shoe = ({shoeList}) => {
-    
+    console.log(shoeList.id)
     const params = useParams();
 
     const shoe = shoeList.find(item => `${item.id}` === params.id);
@@ -43,7 +43,7 @@ const Shoe = ({shoeList}) => {
                         <p style={{margin: '0', fontWeight: '600'}}>{shoe.subTitle}</p>
                         <p style={{margin: '0', fontSize: '25px', fontWeight: '700'}}>{shoe.name}</p>
                     </div>
-                    <ShoeSize/>
+                    <ShoeSize shoeId={shoeList.id}/>
                     <div>
                         <p>
                         Let your attitude have the edge in your Nike Air Max Plus, a Tuned Air experience that offers premium stability and unbelievable cushioning. Featuring the OG's wavy design lines, plastic accents and airy fabric on the upper, it celebrates defiant style.
