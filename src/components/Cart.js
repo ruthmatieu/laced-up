@@ -1,5 +1,9 @@
 import React from 'react';
-import {useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom';
+import EmptyCart from './EmptyCart';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import breakpoint from '../breakpoint';
 
 const Cart = ({length, cartItems, totalPrice}) => {
     console.log('cart items', cartItems)
@@ -26,10 +30,13 @@ const Cart = ({length, cartItems, totalPrice}) => {
             <p>
                 {cartItems.length === 1 ? `There is ${cartItems.length} item in your cart.` : 
                 (cartItems.length > 1 ? `There are ${cartItems.length} items in your cart.`: 
-                'Your cart is empty.')}
+                <EmptyCart/>)}
             </p>
 
-            <div>
+            <Wrapper className='cart-wrapper'>
+                <div>
+
+                
                 {cartItems.map((item, index) => (
                     <div key={index} style={{}}>
                         {item.product.length === 1 ? 
@@ -53,11 +60,21 @@ const Cart = ({length, cartItems, totalPrice}) => {
 
                     </div>
                 ))}
+                </div>
+                <div>
                 <p style={{backgroundColor: '#131921', color: 'white', padding: '10px 0'}}>Total: ${totalPrice}</p>
-            </div>
+
+                </div>
+            </Wrapper>
 
         </div>
     )
 }
 
 export default Cart;
+
+const Wrapper = styled.div `
+    .cart-wrapper {
+        display: flex;
+    }
+`

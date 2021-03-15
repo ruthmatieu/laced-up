@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { useParams } from "react-router-dom";
+import { Link, useParams } from 'react-router-dom';
 import breakpoint from '../breakpoint';
 import Footer from './Footer';
 
@@ -146,9 +145,9 @@ const Wrapper = styled.div `
         }
         ul li {
             list-items: none;
-            color: #000;
+            //color: #000;
             text-transform: capitalize;
-            font-weight: 600;
+            //font-weight: 600;
             padding-bottom: 13px;
         }
 
