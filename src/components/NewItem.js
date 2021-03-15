@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import breakpoint from '../breakpoints';
+import breakpoint from '../breakpoint';
 
 
 const NewItem = (props) => {

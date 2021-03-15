@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+/**/
+.products img {
+  width: 200px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.product-item {
+  padding: 40px;
+}
+
+header {
+  background-color: white;
+  padding: 20px;
+}
+
+.notification {
+  border-radius: 50%;
+  background-color: crimson;
+  margin: 20px;
+  padding: 10px 15px;
+  color: white;
+}
+
+.nav-item {
+  margin: 20px;
+  color: white;
+}
