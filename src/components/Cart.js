@@ -4,6 +4,7 @@ import EmptyCart from './EmptyCart';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import breakpoint from '../breakpoint';
+import Footer from '../components/Footer'
 
 const Cart = ({length, cartItems, totalPrice}) => {
     console.log('cart items', cartItems)
@@ -33,27 +34,30 @@ const Cart = ({length, cartItems, totalPrice}) => {
                 <EmptyCart/>)}
             </p>
 
-            <Wrapper className='cart-wrapper'>
-                <div>
+            <Wrapper>
+                <div className='product-list'>
 
                 
                 {cartItems.map((item, index) => (
                     <div key={index} style={{}}>
                         {item.product.length === 1 ? 
-                        <div>
+                        <div style={{display: 'flex'}}>
                             <img src={item.product.image} alt={item.product.name} style={{width: '150px'}}/>
-                            <h3>{item.product.name}</h3>
-                            <p>${item.product.price}</p>
-                            <h5>Qty: {item.qty}</h5> 
-                            {/* only one */}
+                            <div>
+                                <h3>{item.product.name}</h3>
+                                <p>${item.product.price}</p>
+                                <h5>Qty: {item.qty}</h5> 
+                            </div>
                         </div> 
                         : 
-                        <div>
+                        <div style={{display: 'flex', justifyContent: 'space-between', margin: '15px 40px', borderTop: '1px solid #404040'}}>
+                            
                             <img src={item.product.image} alt={item.product.name} style={{width: '150px'}}/>
-                            <h3>{item.product.name}</h3>
+                            <div>
+                                <h3>{item.product.name}</h3>
+                                <h5>Qty: {item.qty}</h5> 
+                            </div>
                             <p>${item.product.price}</p>
-                            <h5>Qty: {item.qty}</h5> 
-                            {/* more than one */}
                         </div>
                         
                         }
@@ -61,20 +65,39 @@ const Cart = ({length, cartItems, totalPrice}) => {
                     </div>
                 ))}
                 </div>
-                <div>
-                <p style={{backgroundColor: '#131921', color: 'white', padding: '10px 0'}}>Total: ${totalPrice}</p>
-
+                <div className='product-checkout'>
+                    <h4>Summary</h4>
+                    <p>Subtotal: ${totalPrice}</p>
+                    {/* <p>Tax: ${totalPrice*0.07}</p> */}
+                    <p style={{backgroundColor: '#131921', color: 'white', padding: '10px 0'}}>Total: ${totalPrice}</p>
+                    <div>
+                        <button>Checkout</button>
+                    </div>
                 </div>
             </Wrapper>
-
+            <Footer/>
         </div>
     )
 }
 
 export default Cart;
 
-const Wrapper = styled.div `
-    .cart-wrapper {
-        display: flex;
+
+const Wrapper = styled.div`
+
+
+@media only screen and ${breakpoint.device.desktop} {
+
+   
+    display: flex;
+    
+    
+    .product-list {
+        width: 60%;
     }
+    
+    .product-checkout {
+        width: 40%;
+    }
+}
 `

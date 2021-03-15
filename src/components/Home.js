@@ -33,7 +33,7 @@ const Home = ({ data }) => {
         image: three,
         description: 'Shoes Always $100 & Under',
         cta: 'Shop',
-        link: '/clearance',
+        link: '/shop',
         id: 1
         },
         {
@@ -41,7 +41,7 @@ const Home = ({ data }) => {
         image: four,
         description: `Shrug off grey winter days. Shop spring styles.`,
         cta: 'Shop',
-        link: '/clearance',
+        link: '/shop',
         id: 2
         },
     ]
@@ -62,7 +62,7 @@ const Home = ({ data }) => {
               <h1 className='heading-small' style={{ textAlign: 'left', fontFamily: `'Oswald', sans-serif`, textTransform: 'uppercase', margin: '0'}}>new year,<br/>new energy.</h1>
               <h1 className='heading-big' style={{ textAlign: 'left', fontFamily: `'Oswald', sans-serif`, textTransform: 'uppercase', margin: '0'}}>new <br/>year,<br/>new <br/>energy.</h1>
               <p>Take on anything the new year throws your way in<br/>these functional styles.</p>
-              <Link to='/new-releases'><button className='hero-btn'>Shop</button></Link>
+              <Link to='/shop'><button className='hero-btn'>Shop</button></Link>
             </div>
             <div className='hero-right'>
               {/* containexs the image of the man */}
@@ -77,7 +77,7 @@ const Home = ({ data }) => {
                 <img src={one} alt='' style={{width: '50%', height: '100%', marginRight:'2px'}}/>
                 <img src={two} alt='' style={{width: '50%', height: '100%', marginLeft:'2px'}}/>
               </div>
-              <Link to='/new-releases'><button>Shop</button></Link>
+              <Link to='/shop'><button>Shop</button></Link>
             </div>
             
             <h2 style={{textAlign: 'left', marginTop: '70px'}}>Trending Now</h2>
@@ -127,7 +127,7 @@ const Home = ({ data }) => {
             </div>
 
             <div style={{textAlign: 'left', marginTop: '30px'}}>
-              <Link to='/new-releases'><button>Shop All</button></Link>
+              <Link to='/shop'><button>Shop All</button></Link>
             </div> 
 
             <div style={{margin: '130px 0 130px 20px', textAlign: 'center'}}>

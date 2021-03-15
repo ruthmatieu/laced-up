@@ -68,7 +68,9 @@ const Shoe = ({data, addToCart}) => {
                                 </li>
                             </ul>
                         </div>
-                        <button onClick={() => addToCart(shoe, 1)}>Add to Cart</button>
+
+                        <button onClick={() => addToCart(shoe, 1)} className='cart-btn'>Add to Cart</button>
+                        <Link to='/shop'><button className='continue-btn'>Continue Shopping</button></Link>
                     </div>
                     
                 </div>
@@ -122,19 +124,37 @@ const Container = styled.div`
   .desktop-hero, .desktop-desc {
     display: none;
   }
-  button {
+  .cart-btn {
     background-color: #111;
-    color: white;
     border: none;
     border-radius: 30px;
     padding: 20px 120px;
-    text-align: left;
+    margin: 0 5px;
+    transition: 0.5s;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
 }
 
-button:hover {
+.cart-btn:hover {
+    cursor: pointer;
+    background-color: #404040;
+    transition: 0.5s;
+}
+.continue-btn {
+    background-color: white;
+    font-size: 16px;
+    font-weight: 500;
+    color: #111;
+    border: 1px solid #111;
+    border-radius: 30px;
+    padding: 20px 100px;
+    margin: 50px 5px 0 5px;
+}
+
+.continue-btn:hover {
     cursor: pointer;
 }
-
 
     @media only screen and ${breakpoint.device.tablet} {
 

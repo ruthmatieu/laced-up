@@ -41,10 +41,10 @@ const App = () => {
                 <div className='nav-items'>
                   <img src={logo} alt='logo' className='logo'/>
                   <MenuLink to='/'><p>Home</p></MenuLink>
-                  {/* <MenuLink to='/new-releases'><p>New Releases</p></MenuLink>
-                  <MenuLink to='/mens-shoes'><p>Men</p></MenuLink>
-                  <MenuLink to='/womens-shoes'><p>Women</p></MenuLink> */}
-                  <MenuLink to='/shop'><p>Products</p></MenuLink>
+                  <MenuLink to='/shop'><p>New Releases</p></MenuLink>
+                  <MenuLink to='/shop'><p>Men</p></MenuLink>
+                  <MenuLink to='/shop'><p>Women</p></MenuLink>
+                  <MenuLink to='/shop'><p>All Shoes</p></MenuLink>
                 </div>
                 <div className='menu__btns'>
                   {cart.length > 0 ? 
@@ -58,10 +58,7 @@ const App = () => {
                     <MenuLink to='/cart'><GrCart size={30}/></MenuLink>
                   }
                   <MenuLink to='/membership'><button className='nav-btn'>Join us</button></MenuLink>
-                  <MenuLink to='/sign-in'><button className='nav-btn'>Sign in</button></MenuLink>
-                  
-                  
-                  
+                  <MenuLink to='/sign-in'><button className='nav-btn'>Sign in</button></MenuLink> 
               </div>
           </nav>
         </header>
@@ -110,6 +107,7 @@ const Wrapper = styled.div`
 
     nav {
       display: flex;
+      //display: none;
       justify-content: space-between;
     }
 
