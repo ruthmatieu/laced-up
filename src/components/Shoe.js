@@ -27,19 +27,23 @@ const Shoe = ({data, addToCart}) => {
                 </div>
                 <div className='mobile-section' style={{display: 'flex', justifyContent: 'space-between', margin: '25px 15px'}}>               
                     <div className='mobile-desc'>
-                        mobile desc
                         <p style={{margin: '0', fontWeight: '600'}}>{shoe.subTitle}</p>
                         <p style={{margin: '0', fontSize: '25px', fontWeight: '700'}}>{shoe.name}</p>
                         
                     </div>
-                    <p style={{margin: '0', fontWeight: '600'}}>${shoe.price}</p>
+                    <p className='price' style={{margin: '0', fontWeight: '600'}}>${shoe.price}</p>
+                    
                 </div>
+
             </div>
+
         </MobileContainer>
 
             <Container>
                 <div className='shoe-div'>
                     <img src={shoe.image} alt={shoe.name}/>
+                    <button className='mobile-btn' onClick={() => addToCart(shoe, 1)}>Add to Cart</button>
+
                 </div>
                 
             
@@ -107,6 +111,13 @@ const Container = styled.div`
   ul li {
       text-align: left;
   }
+  .mobile-btn {
+    border-radius: 0;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 80px;
+  }
 
   .desktop-hero, .desktop-desc {
     display: none;
@@ -115,8 +126,8 @@ const Container = styled.div`
     background-color: #111;
     color: white;
     border: none;
-    border-radius: 25px;
-    padding: 10px 20px;
+    border-radius: 30px;
+    padding: 20px 120px;
     text-align: left;
 }
 
@@ -142,6 +153,9 @@ button:hover {
             display: none;
             background-color: red;
         }
+        .mobile-btn {
+            display: none;
+        }
 
         .shoe-div {
             width: 60%;
@@ -151,6 +165,11 @@ button:hover {
             display: block;
             margin-left: 50px;
             // width: 40%;
+        }
+
+        .price {
+            display: none;
+            
         }
     }
   }
