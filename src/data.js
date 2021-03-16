@@ -236,7 +236,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: eleven,
         availability: '1 color',
-        price: 130,
+        price: 130.00,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     }
 ]

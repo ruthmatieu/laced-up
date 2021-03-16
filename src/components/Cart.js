@@ -17,6 +17,12 @@ const Cart = ({length, cartItems, totalPrice}) => {
     }, 0);
     console.log('total qty:',totalQty)
 
+    const tax = totalPrice * 0.07;
+
+    //format into US currency
+    function formatMoney(number) {
+        return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    }
 
     const removeItem = () => {
 
@@ -67,9 +73,20 @@ const Cart = ({length, cartItems, totalPrice}) => {
                 </div>
                 <div className='product-checkout'>
                     <h4>Summary</h4>
-                    <p>Subtotal: ${totalPrice}</p>
-                    {/* <p>Tax: ${totalPrice*0.07}</p> */}
-                    <p style={{backgroundColor: '#131921', color: 'white', padding: '10px 0'}}>Total: ${totalPrice}</p>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <p>Subtotal</p>
+                        <p>{formatMoney(totalPrice)}</p>
+                    </div>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <p>Estimated Shipping & Handling</p>
+                        <p>$0.00</p>
+                    </div>
+                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                        <p>Tax</p>
+                        <p>{formatMoney(tax)}</p>
+                    </div>
+                    
+                    <p style={{backgroundColor: '#131921', color: 'white', padding: '10px 0'}}>Total: {formatMoney(totalPrice + tax)}</p>
                     <div>
                         <button>Checkout</button>
                     </div>
@@ -98,6 +115,7 @@ const Wrapper = styled.div`
     
     .product-checkout {
         width: 40%;
+        margin-right: 40px;
     }
 }
 `
