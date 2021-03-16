@@ -50,9 +50,11 @@ const App = () => {
                   {cart.length > 0 ? 
                     <div>
                       <MenuLink to='/cart'><GrCart size={30}/></MenuLink>
-                      <div className='cart-notifications'>
-                        <span className='cart-item-num'>{cart.length}</span>
-                      </div>
+                      <Link to='/cart'>
+                        <div className='cart-notifications'>
+                          <span className='cart-item-num'>{cart.length}</span>
+                        </div>
+                      </Link>
                     </div>
                    :
                     <MenuLink to='/cart'><GrCart size={30}/></MenuLink>

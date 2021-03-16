@@ -35,8 +35,8 @@ const Cart = ({length, cartItems, totalPrice}) => {
     return (
         <div>
             <p>
-                {cartItems.length === 1 ? `There is ${cartItems.length} item in your cart.` : 
-                (cartItems.length > 1 ? `There are ${cartItems.length} items in your cart.`: 
+                {cartItems.length === 1 ? `You have ${cartItems.length} item in your cart` : 
+                (cartItems.length > 1 ? `You have ${cartItems.length} items in your cart`: 
                 <EmptyCart/>)}
             </p>
 
@@ -101,7 +101,11 @@ export default Cart;
 
 
 const Wrapper = styled.div`
+padding-bottom: 130px;
 
+.product-checkout {
+    margin: 0 20px;
+}
 
 @media only screen and ${breakpoint.device.desktop} {
 
