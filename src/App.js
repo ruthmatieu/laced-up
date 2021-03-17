@@ -3,12 +3,12 @@ import {Switch, Link, Route} from 'react-router-dom';
 import styled from 'styled-components';
 import breakpoint from './breakpoint';
 import { data } from './data';
-import Cart from './components/Cart';
-import Home from './components/Home';
-import Shop from './components/Shop';
-import Shoe from './components/Shoe';
-import Login from './components/user/Login';
-import Register from './components/user/Register';
+import Cart from './client/components/Cart';
+import Home from './client/components/Home';
+import Shop from './client/components/Shop';
+import Shoe from './client/components/Shoe';
+import Login from './client/user/Login';
+import Register from './client/user/Register';
 import logo from './images/logo.png'
 import './App.css';
 
