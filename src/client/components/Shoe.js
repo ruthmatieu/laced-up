@@ -23,7 +23,7 @@ const Shoe = ({data, addToCart}) => {
             <div style={{textAlign: 'left'}}>
                 <div style={{backgroundColor: '#F7F7F7', padding: '10px 0', textAlign: 'center'}}>
                     <p style={{margin: '0', textTransform: 'uppercase'}}>Free shipping & 60-Day Free return</p>
-                    <Link to='/membership'>Join Now</Link>
+                    <Link to='/membership' style={{color: 'black', fontSize: '13px'}}>Join Now</Link>
                 </div>
                 <div className='mobile-section' style={{display: 'flex', justifyContent: 'space-between', margin: '25px 15px'}}>               
                     <div className='mobile-desc'>
