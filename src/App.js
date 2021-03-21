@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {Switch, Link, Route} from 'react-router-dom';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import styled from 'styled-components';
 import breakpoint from './breakpoint';
 import { data } from './data';
@@ -9,13 +10,24 @@ import Shop from './client/components/Shop';
 import Shoe from './client/components/Shoe';
 import Login from './client/user/Login';
 import Register from './client/user/Register';
-import logo from './images/logo.png'
+import logo from './images/logo.png';
 import './App.css';
 
 //icons
 import { GrCart } from 'react-icons/gr';
+import Navigation from "./client/components/Navigation";
 const App = () => {
   const [cart, setCart] = useState([]);
+  const [mobileMenu, setMobileMenu] = useState();
+
+  useEffect(() => {
+
+    const setHamburgerMenu = () => {
+
+    }
+    setHamburgerMenu();
+
+  },[])
 
   //adds users selected item
   const addToCart = (product, qty) => {
@@ -37,33 +49,26 @@ const App = () => {
 
       <Wrapper className='App'>
         <header>
-          <nav>
-                <div className='nav-items'>
-                  <img src={logo} alt='logo' className='logo'/>
-                  <MenuLink to='/'><p>Home</p></MenuLink>
-                  <MenuLink to='/shop'><p>New Releases</p></MenuLink>
-                  <MenuLink to='/shop'><p>Men</p></MenuLink>
-                  <MenuLink to='/shop'><p>Women</p></MenuLink>
-                  <MenuLink to='/shop'><p>All Shoes</p></MenuLink>
-                </div>
-                <div className='menu__btns'>
-                  {cart.length > 0 ? 
-                    <div>
-                      <MenuLink to='/cart'><GrCart size={30}/></MenuLink>
-                      <Link to='/cart'>
+          <Link to='/'><img src={logo} alt='logo' className='logo'/></Link>
+          <div className='nav-mobile-icons'>
+          {cart.length > 0 ?
+                <div className='cart-items'>
+                    <MenuLink to='/cart'><GrCart size={25} style={{color: 'red'}}/></MenuLink>
+                    <Link to='/cart' >
                         <div className='cart-notifications'>
-                          <span className='cart-item-num'>{cart.length}</span>
+                        <span className='cart-item-num'>{cart.length}</span>
                         </div>
-                      </Link>
-                    </div>
-                   :
-                    <MenuLink to='/cart'><GrCart size={30}/></MenuLink>
-                  }
-                  <MenuLink to='/membership'><button className='nav-btn'>Join us</button></MenuLink>
-                  <MenuLink to='/sign-in'><button className='nav-btn'>Sign in</button></MenuLink> 
-              </div>
-          </nav>
+                    </Link>
+                </div>
+                    :
+                <div className='cart-items'>
+                    <MenuLink to='/cart'><GrCart size={25} style={{color: 'red'}}/></MenuLink>
+                </div>
+                }
+          <Navigation cart={cart}/>
+          </div>
         </header>
+
         <Switch>
           <Route exact path='/'>
             <Home data={data}/>
@@ -99,57 +104,24 @@ const Wrapper = styled.div`
     //margin: 0 auto;
   }
 
-    .logo {
-      width: 50px;
-      height: 50px;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    nav {
-      display: flex;
-      //display: none;
-      justify-content: space-between;
-    }
-
-    .nav-items {
-      display: flex;
-    }
-
-    .menu__btns {
-      display: flex;
-      position: relative;
-    }
-   .nav-header {
-     display: flex;
-     justify-content: space-between;
-   }
-   .desktop-links {
-     display: none;
-   }
-
-   .show-links {
+  .logo {
+    width: 50px;
+    height: 50px;
     display: block;
-   }
+    // margin-left: auto;
+    // margin-right: auto;
+  }
 
-   .cart-notifications {
-     position: absolute;
-     left: 80px;
-     bottom: 40px;
-     background-color: crimson;
-     color: white;
-     border-radius: 50%;
-     text-align: center;
-     height: 25px;
-     width: 25px;
+  .nav-mobile-icons {
+    display: flex;
+  }
 
-   }
-
-   .cart-item-num {
-     font-size: 12px;
-   }
-   button {
+  button {
     background-color: #111;
     color: white;
     border: none;
@@ -160,70 +132,41 @@ const Wrapper = styled.div`
   button:hover {
     pointer: cursor;
   }
+
+  .cart-notifications {
+    position: absolute;
+    right: 80px;
+    top: 10px;
+    background-color: crimson;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    height: 25px;
+    width: 25px;
+
+  }
+
+  .cart-item-num {
+    font-size: 12px;
+  }
     
 
     @media only screen and ${breakpoint.device.desktop} {
      //background-color: red;
-
-      .nav-header {
-        display: flex;
-        justify-content:
-      }
+     
+      
 
       .logo {
         width: 50px;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        // margin-left: auto;
+        // margin-right: auto;
       }
 
-      .nav-links {
-        //display:none;
-      }
-
-      .nav-center {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .desktop-links {
-        display: block;
-        display: flex;
-
-      }
-
-      .nav-items {
-        display: flex;
-        
-      }
-
-      .toggle-icon {
+      .cart-items {
         display: none;
       }
 
-      .menu__btns {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-left: 50px;
-      }
-
-      .menu__btns button {
-        cursor: pointer;
-      }
-
-      .cart-notifications {
-        position: absolute;
-        left: 80px;
-        bottom: 40px;
-        background-color: crimson;
-        color: white;
-        border-radius: 50%;
-        text-align: center;
-        height: 25px;
-        width: 25px;
-   
-      }
     }
 
   `;

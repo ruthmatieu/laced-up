@@ -1,17 +1,29 @@
-import one from './images/products/one.jpg';
-import two from './images/products/two.jpg';
-import three from './images/products/three.jpg';
-import four from './images/products/four.jpg';
-import five from './images/products/five.jpg';
-import six from './images/products/six.jpg';
-import seven from './images/products/seven.jpg';
-import eight from './images/products/eight.jpg';
-import nine from './images/products/nine.jpg';
-import ten from './images/products/ten.jpg';
-import eleven from './images/products/eleven.png';
-import twelve from './images/products/seven.png';
-import thirteen from './images/products/eight.png';
-import fourteen from './images/products/five.png';
+import one from './images/products/1.jpg';
+import two from './images/products/2.jpg';
+import three from './images/products/3.jpg';
+import four from './images/products/4.jpg';
+import five from './images/products/5.jpg';
+import six from './images/products/6.jpg';
+import seven from './images/products/7.jpg';
+import eight from './images/products/8.jpg';
+import nine from './images/products/9.jpg';
+import ten from './images/products/10.jpg';
+import eleven from './images/products/11.jpg';
+import twelve from './images/products/12.jpg';
+import thirteen from './images/products/13.jpg';
+import fourteen from './images/products/14.jpg';
+import fifteen from './images/products/15.jpg';
+import sixteen from './images/products/16.jpg';
+import seventeen from './images/products/17.jpg';
+import eighteen from './images/products/18.jpg';
+import nineteen from './images/products/19.jpg';
+import twenty from './images/products/20.jpg';
+import twentyOne from './images/products/21.jpg';
+import twentyTwo from './images/products/22.jpg';
+import twentyThree from './images/products/23.jpg';
+import twentyFour from './images/products/24.jpg';
+import twentyFive from './images/products/25.jpg';
+
 
 
 export const data = [
@@ -144,7 +156,7 @@ export const data = [
         id: 15,
         name: 'Nike Metcom 6',
         subTitle: `Men's Shoe`,
-        image: one,
+        image: fifteen,
         availability: '2 colors',
         price: 120,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
@@ -153,7 +165,7 @@ export const data = [
         id: 16,
         name: 'Nike Air Force 1',
         subTitle: `Men's Shoe`,
-        image: two,
+        image: sixteen,
         availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
@@ -162,7 +174,7 @@ export const data = [
         id: 17,
         name: 'Nike Cosmic Unity Amalgam',
         subTitle: `Women's Shoe`,
-        image: three,
+        image: seventeen,
         availability: '2 colors',
         price: 145,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
@@ -171,7 +183,7 @@ export const data = [
         id: 18,
         name: `PG 5 "LA Drip"`,
         subTitle: `Men's Shoe`,
-        image: four,
+        image: eighteen,
         availability: '2 colors',
         price: 80,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
@@ -180,7 +192,7 @@ export const data = [
         id: 19,
         name: 'Nike ZoomX Invincible Run Flyknit',
         subTitle: `Men's Shoe`,
-        image: five,
+        image: nineteen,
         availability: '2 colors',
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
@@ -189,7 +201,7 @@ export const data = [
         id: 20,
         name: 'Nike SB BLZR Court',
         subTitle: `Men's Shoe`,
-        image: six,
+        image: twenty,
         availability: '2 colors',
         price: 120,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
@@ -198,7 +210,7 @@ export const data = [
         id: 21,
         name: 'LeBron 18 Black/Electric',
         subTitle: `Men's Shoe`,
-        image: seven,
+        image: twentyOne,
         availability: '2 colors',
         price: 200,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
@@ -207,7 +219,7 @@ export const data = [
         id: 22,
         name: 'Roswell Rayguns Chuck 70',
         subTitle: `Women's Shoe`,
-        image: eight,
+        image: twentyTwo,
         availability: '2 colors',
         price: 135,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
@@ -216,7 +228,7 @@ export const data = [
         id: 23,
         name: 'Nike SuperRep Cycle',
         subTitle: `Men's Shoe`,
-        image: nine,
+        image: twentyThree,
         availability: '2 colors',
         price: 170,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
@@ -225,7 +237,7 @@ export const data = [
         id: 24,
         name: `Nike Blazer Mid '77`,
         subTitle: `Women's Shoe`,
-        image: ten,
+        image: twentyFour,
         availability: '3 colors',
         price: 165,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
@@ -234,7 +246,7 @@ export const data = [
         id: 25,
         name: 'Nike DBreak-Type',
         subTitle: `Men's Shoe`,
-        image: eleven,
+        image: twentyFive,
         availability: '1 color',
         price: 130.00,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`

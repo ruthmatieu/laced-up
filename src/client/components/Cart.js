@@ -29,7 +29,7 @@ const Cart = ({length, cartItems, totalPrice}) => {
     }
 
     const editItem = () => {
-
+        //
     }
 
     return (

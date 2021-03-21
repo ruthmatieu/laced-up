@@ -166,7 +166,7 @@ const Container = styled.div`
         margin: 120px 50px;
 
         img {
-            width: 300px;
+            width: 600px;
         }
 
         .mobile-desc {
