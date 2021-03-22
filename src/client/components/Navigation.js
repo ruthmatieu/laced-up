@@ -41,11 +41,11 @@ const Navigation = ({cart}) => {
             </div>
             <div className='desktop-nav'>
                 <div className='menu-left'>
-                <MenuLink to='/'><p>Home</p></MenuLink>
-                <MenuLink to='/new-releases'><p>New Releases</p></MenuLink>
-                <MenuLink to='/men-shoes'><p>Men</p></MenuLink>
-                <MenuLink to='/women-shoes'><p>Women</p></MenuLink>
-                <MenuLink to='/all-shoes'><p>All Shoes</p></MenuLink>
+                    <MenuLink to='/'><p>Home</p></MenuLink>
+                    <MenuLink to='/new-releases'><p>New Releases</p></MenuLink>
+                    <MenuLink to='/men-shoes'><p>Men</p></MenuLink>
+                    <MenuLink to='/women-shoes'><p>Women</p></MenuLink>
+                    <MenuLink to='/all-shoes'><p>All Shoes</p></MenuLink>
                 </div>
                 <div className='menu__btns'>
                     {cart.length > 0 ? 
@@ -72,13 +72,11 @@ const Navigation = ({cart}) => {
 export default Navigation;
 
 const Wrapper = styled.nav`
-max-width: 1920px;
-margin: 0 auto;
+
 
 .mobile-nav {
     display: flex;
     //display: none;
-    
     justify-content: space-between;
     position: relative;
     z-index: 2;
@@ -123,6 +121,15 @@ p, .nav-btn {
   .cart-item-num {
     font-size: 12px;
   }
+  @media only screen and ${breakpoint.device.tablet} {
+    // .desktop-nav {
+    //     display: block;
+    //     display: flex;
+    //     max-width: 1920px;
+    //     margin: 0 auto;
+    //     padding: 0;  
+    // }
+  }
 
   @media only screen and ${breakpoint.device.desktop} {
 
@@ -133,13 +140,28 @@ p, .nav-btn {
     .desktop-nav {
         display: block;
         display: flex;
-        
+        max-width: 1920px;
+        margin: 0 auto;
+        padding: 0 20px;  
     }
     .menu-left {
         display: flex;
-        margin: 0 auto
-        padding-top: 10px;
+        //margin: 0 auto
+        margin-top: 10px;
     }
+
+    .cart-notifications {
+        position: absolute;
+        left: 30px;
+        top: -12px;
+        background-color: crimson;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        height: 25px;
+        width: 25px;
+    
+      }
     
 }
 `

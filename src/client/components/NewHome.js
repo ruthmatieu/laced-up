@@ -101,26 +101,26 @@ const NewHome = ({data}) => {
                         <button>Explore</button>
                     </div>
                 </div>
-            <div>
+                <div className='trending'>
 
-            <h2>Trending Now</h2>
-            <div className='trending-section'>
-                
-                {firstSection.map(item => (
-                    <div style={{position: 'relative'}}>
-                        <img src={item.image} alt={item.name} style={{width: '100%'}}/>
-                        <div style={{position: 'absolute', bottom: '35px', textAlign: 'left', paddingLeft: '40px'}}>
-                            <p style={{ color: 'white', fontWeight: '600'}}>{item.description}</p>
-                            <Link to='/all-shoes'><button>Shop</button></Link>
+                    <h2>Trending Now</h2>
+                    <div className='trending-section'>
+                        
+                        {firstSection.map(item => (
+                            <div style={{position: 'relative'}}>
+                                <img src={item.image} alt={item.name} style={{width: '100%'}}/>
+                                <div style={{position: 'absolute', bottom: '35px', textAlign: 'left', paddingLeft: '40px'}}>
+                                    <p style={{ color: 'white', fontWeight: '600'}}>{item.description}</p>
+                                    <Link to='/all-shoes'><button>Shop</button></Link>
+                                </div>
                         </div>
+                        ))}
+                        
+                        
+                    </div>
                 </div>
-                ))}
-                
-                
-            </div>
-            </div>
             
-                <div className='latest-section'>
+            <div className='latest-section'>
                     <h2 style={{textAlign: 'left'}}>The Latest & Greatest</h2>
                     <div style={{display: 'flex', overflowY: 'hidden', overflowX: 'auto', whiteSpace: 'nowrap'}}>
                         {latestAndGreatest.map(item => {
@@ -140,30 +140,32 @@ const NewHome = ({data}) => {
                         })}
                     </div>
                     <Link to='/all-shoes'><button style={{textAlign: 'left'}}>Shop</button></Link>
-                </div>
+            </div>
             
                 <div className='member-access'>
                     <h2>Member First Access</h2>
                     <img src={three} alt='man running track' style={{width: '100%', height: '50%'}}/>
                     <Link to='/membership'><button>Sign Up</button></Link>
                 </div>
+                <div className='air-max'>
 
-                <h2>The Best of Air Max</h2>
-                <div className='air-max-section'>
-                    
-                    <div className='air-max-div'>
+                    <h2>The Best of Air Max</h2>
+                    <div className='air-max-section'>
                         
-                        {secondSection.map(item => (
-                            <div style={{position: 'relative', paddingBottom: '8px'}}>
-                                <img src={item.image} alt={item.name} style={{width: '100%'}}/>
-                                <div style={{position: 'absolute', bottom: '35px', textAlign: 'left', paddingLeft: '40px'}}>
-                                    <p style={{ color: 'white', fontWeight: '600'}}>{item.description}</p>
-                                    <Link to='/all-shoes'><button>Shop</button></Link>
+                        <div className='air-max-div'>
+                            
+                            {secondSection.map(item => (
+                                <div style={{position: 'relative', paddingBottom: '8px'}}>
+                                    <img src={item.image} alt={item.name} style={{width: '100%'}}/>
+                                    <div style={{position: 'absolute', bottom: '35px', textAlign: 'left', paddingLeft: '40px'}}>
+                                        <p style={{ color: 'white', fontWeight: '600'}}>{item.description}</p>
+                                        <Link to='/all-shoes'><button>Shop</button></Link>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
-                        
-                        
+                            ))}
+                            
+                            
+                        </div>
                     </div>
                 </div>
             </div>
@@ -211,7 +213,7 @@ const Wrapper = styled.section`
     .intro-paragraph-div {
         position: relative;
         max-width: 1920px;
-    margin: 0 auto;
+        margin: 0 auto;
     }
 
     .intro-paragraph-div img {
@@ -249,15 +251,20 @@ const Wrapper = styled.section`
         text-align: left
     }
 
-    .trending-section {
-        padding-bottom: 50px;
-        width: 100%;
+    .trending, .air-max {
         max-width: 1920px;
         margin: 0 auto;
     }
 
+    .trending-section {
+        padding-bottom: 50px;
+    }
+
+
     .latest-section, .member-access {
         padding-bottom: 80px;
+        max-width: 1920px;
+        margin: 0 auto;
     }
 
     .latest-section button {
@@ -337,8 +344,10 @@ const Wrapper = styled.section`
             cursor: pointer;
         }
 
+       
         .trending-section {
             display: flex;
+            justify-content: space-between;
         }
 
         .air-max-section {

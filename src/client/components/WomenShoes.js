@@ -66,9 +66,9 @@ const WomenShoes = ({data, addToCart}) => {
                 </section>
                 </div>
 
-            <Footer/>
-        </Wrapper>
             
+        </Wrapper>
+        <Footer/>
         </div>
     )
 }
@@ -76,7 +76,9 @@ const WomenShoes = ({data, addToCart}) => {
 export default WomenShoes;
 
 const Wrapper = styled.div `
-    margin: '0 3vw';
+    padding: '0 3vw';
+    max-width: 1920px;
+    margin: 0 auto;
 
     h3 {
         text-align: left;

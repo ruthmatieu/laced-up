@@ -89,9 +89,6 @@ const App = () => {
 
       </Wrapper>
 
-        
-
-
   );
 };
 
@@ -108,12 +105,15 @@ const Wrapper = styled.div`
   header {
     display: flex;
     justify-content: space-between;
+    max-width: 1920px;
+        margin: 0 auto;
   }
 
   .logo {
     width: 50px;
     height: 50px;
     display: block;
+    margin-left: 20px;
     // margin-left: auto;
     // margin-right: auto;
   }
