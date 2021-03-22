@@ -37,7 +37,7 @@ const NewHome = ({data}) => {
         image: one,
         description: 'Shoes Always $100 & Under',
         cta: 'Shop',
-        link: '/shop',
+        link: '/all-shoes',
         id: 1
         },
         {
@@ -45,7 +45,7 @@ const NewHome = ({data}) => {
         image: two,
         description: `Shrug off grey winter days. Shop spring styles.`,
         cta: 'Shop',
-        link: '/shop',
+        link: '/all-shoes',
         id: 2
         },
     ]
@@ -56,7 +56,7 @@ const NewHome = ({data}) => {
             image: five,
             description: 'Air Max for Kids',
             cta: 'Shop',
-            link: '/shop',
+            link: '/all-shoes',
             id: 1
         },
         {
@@ -64,7 +64,7 @@ const NewHome = ({data}) => {
             image: four,
             description: `Air Max for Men`,
             cta: 'Shop',
-            link: '/shop',
+            link: '/all-shoes',
             id: 2
         },
         {
@@ -72,7 +72,7 @@ const NewHome = ({data}) => {
             image: six,
             description: `Air Max for Women`,
             cta: 'Shop',
-            link: '/shop',
+            link: '/all-shoes',
             id: 2
         },
     ]
@@ -91,13 +91,13 @@ const NewHome = ({data}) => {
                     <div className='hero-left'>
                         <h1>new year,<br/>new energy.</h1>
                         <p>Take on anything the new year throws your way in<br/>these functional styles.</p>
-                        <Link to='/shop'><button className='hero-btn'>Shop</button></Link>
+                        <Link to='/new-releases'><button className='hero-btn'>Shop</button></Link>
                         <button>Explore</button>
                     </div>
                     <div className='hero-left-mobile'>
                         <h1>new year,<br/>new energy.</h1>
                         <p>Take on anything the new year throws your way in<br/>these functional styles.</p>
-                        <Link to='/shop'><button className='hero-btn'>Shop</button></Link>
+                        <Link to='/new-releases'><button className='hero-btn'>Shop</button></Link>
                         <button>Explore</button>
                     </div>
                 </div>
@@ -111,7 +111,7 @@ const NewHome = ({data}) => {
                         <img src={item.image} alt={item.name} style={{width: '100%'}}/>
                         <div style={{position: 'absolute', bottom: '35px', textAlign: 'left', paddingLeft: '40px'}}>
                             <p style={{ color: 'white', fontWeight: '600'}}>{item.description}</p>
-                            <Link to='/shop'><button>Shop</button></Link>
+                            <Link to='/all-shoes'><button>Shop</button></Link>
                         </div>
                 </div>
                 ))}
@@ -139,7 +139,7 @@ const NewHome = ({data}) => {
                             )
                         })}
                     </div>
-                    <Link><button style={{textAlign: 'left'}}>Shop</button></Link>
+                    <Link to='/all-shoes'><button style={{textAlign: 'left'}}>Shop</button></Link>
                 </div>
             
                 <div className='member-access'>
@@ -158,7 +158,7 @@ const NewHome = ({data}) => {
                                 <img src={item.image} alt={item.name} style={{width: '100%'}}/>
                                 <div style={{position: 'absolute', bottom: '35px', textAlign: 'left', paddingLeft: '40px'}}>
                                     <p style={{ color: 'white', fontWeight: '600'}}>{item.description}</p>
-                                    <Link to='/shop'><button>Shop</button></Link>
+                                    <Link to='/all-shoes'><button>Shop</button></Link>
                                 </div>
                             </div>
                         ))}
@@ -205,10 +205,13 @@ const Wrapper = styled.section`
 
     .intro-paragraph {
         margin: 0 20px;
+        
     }
 
     .intro-paragraph-div {
         position: relative;
+        max-width: 1920px;
+    margin: 0 auto;
     }
 
     .intro-paragraph-div img {
@@ -248,6 +251,9 @@ const Wrapper = styled.section`
 
     .trending-section {
         padding-bottom: 50px;
+        width: 100%;
+        max-width: 1920px;
+        margin: 0 auto;
     }
 
     .latest-section, .member-access {

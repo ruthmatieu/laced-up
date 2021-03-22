@@ -72,6 +72,9 @@ const Navigation = ({cart}) => {
 export default Navigation;
 
 const Wrapper = styled.nav`
+max-width: 1920px;
+margin: 0 auto;
+
 .mobile-nav {
     display: flex;
     //display: none;
