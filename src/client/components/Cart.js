@@ -19,7 +19,7 @@ const Cart = ({length, cartItems, totalPrice}) => {
     }, 0);
     console.log('total qty:',totalQty)
     */
-   document.title = 'LacedUp | My Cart';
+   document.title = `LacedUp | My Cart (${cartItems.length})`;
 
     const tax = totalPrice * 0.07;
 

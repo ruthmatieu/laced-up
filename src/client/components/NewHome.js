@@ -20,7 +20,7 @@ import six from '../../images/landing-6.png';
 
 const NewHome = ({data}) => {
 
-    document.title = 'LacedUp | Stylish Sneakers For Less';
+    document.title = 'LacedUp | Stylish Sneakers For Less | Home';
   
     const params = useParams();
     
