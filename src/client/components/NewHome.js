@@ -95,6 +95,12 @@ const NewHome = ({data}) => {
                         <Link to='/shop'><button className='hero-btn'>Shop</button></Link>
                         <button>Explore</button>
                     </div>
+                    <div className='hero-left-mobile'>
+                        <h1>new year,<br/>new energy.</h1>
+                        <p>Take on anything the new year throws your way in<br/>these functional styles.</p>
+                        <Link to='/shop'><button className='hero-btn'>Shop</button></Link>
+                        <button>Explore</button>
+                    </div>
                 </div>
             <div>
 
@@ -108,14 +114,6 @@ const NewHome = ({data}) => {
                             <p style={{ color: 'white', fontWeight: '600'}}>{item.description}</p>
                             <Link to='/shop'><button>Shop</button></Link>
                         </div>
-                        
-                    {/* // <div style={{display: 'flex', justifyContent: 'space-around'}}>
-                    // <div style={{width: '50%'}}>
-                    //     <img src={item.image} style={{width: '100%'}}/>
-                    // </div>
-                    // <div style={{width: '50%'}}>
-                    // <img src={two} style={{width: '100%'}}/>
-                    // </div> */}
                 </div>
                 ))}
                 
@@ -123,57 +121,53 @@ const NewHome = ({data}) => {
             </div>
             </div>
             
-            <div>
-                <h2 style={{textAlign: 'left'}}>The Latest & Greatest</h2>
-                <div style={{display: 'flex', overflowY: 'hidden', overflowX: 'auto', whiteSpace: 'nowrap'}}>
-                    {latestAndGreatest.map(item => {
-                        return (
-                        <div key={item.id}>
-                            <div>
-                            <Link to={`/shoe/${item.id}`}><img src={item.image} alt={item.name} style={{width: '300px', marginRight: '7px'}}/></Link>
-                            <div style={{textAlign: 'left'}}>
-                                <p style={{margin: '0', paddingTop: '5px', fontWeight: '700'}}>{item.name}</p>
-                                <p style={{margin: '0', color: '#767676'}}>{item.subTitle}</p>
-                                <p style={{margin: '0', color: '#767676'}}>{item.availability}</p>
-                                <p style={{margin: '0', paddingTop: '5px', fontWeight: '700'}}>${item.price}</p>
+                <div className='latest-section'>
+                    <h2 style={{textAlign: 'left'}}>The Latest & Greatest</h2>
+                    <div style={{display: 'flex', overflowY: 'hidden', overflowX: 'auto', whiteSpace: 'nowrap'}}>
+                        {latestAndGreatest.map(item => {
+                            return (
+                            <div key={item.id}>
+                                <div>
+                                <Link to={`/shoe/${item.id}`}><img src={item.image} alt={item.name} style={{width: '300px', marginRight: '7px'}}/></Link>
+                                <div style={{textAlign: 'left'}}>
+                                    <p style={{margin: '0', paddingTop: '5px', fontWeight: '700'}}>{item.name}</p>
+                                    <p style={{margin: '0', color: '#767676'}}>{item.subTitle}</p>
+                                    <p style={{margin: '0', color: '#767676'}}>{item.availability}</p>
+                                    <p style={{margin: '0', paddingTop: '5px', fontWeight: '700'}}>${item.price}</p>
+                                </div>
+                                </div>
                             </div>
-                            </div>
-                        </div>
-                        )
-                    })}
+                            )
+                        })}
+                    </div>
+                    <Link><button style={{textAlign: 'left'}}>Shop</button></Link>
                 </div>
-            </div>
             
-
-            <div>
-                <img src={three} alt='woman resting on rock' style={{width: '100%', height: '50%'}}/>
-            </div>
+                <div className='member-access'>
+                    <h2>Member First Access</h2>
+                    <img src={three} alt='man running track' style={{width: '100%', height: '50%'}}/>
+                    <Link to='/membership'><button>Sign Up</button></Link>
+                </div>
 
                 <div className='air-max-section'>
+                    <h2>The Best of Air Max</h2>
                     <div className='air-max-div'>
                         
                         {secondSection.map(item => (
-                            <div style={{position: 'relative'}}>
+                            <div style={{position: 'relative', paddingBottom: '8px'}}>
                                 <img src={item.image} alt={item.name} style={{width: '100%'}}/>
                                 <div style={{position: 'absolute', bottom: '35px', textAlign: 'left', paddingLeft: '40px'}}>
                                     <p style={{ color: 'white', fontWeight: '600'}}>{item.description}</p>
                                     <Link to='/shop'><button>Shop</button></Link>
                                 </div>
-                                
-                            {/* // <div style={{display: 'flex', justifyContent: 'space-around'}}>
-                            // <div style={{width: '50%'}}>
-                            //     <img src={item.image} style={{width: '100%'}}/>
-                            // </div>
-                            // <div style={{width: '50%'}}>
-                            // <img src={two} style={{width: '100%'}}/>
-                            // </div> */}
-                        </div>
+                            </div>
                         ))}
                         
                         
                     </div>
                 </div>
             </div>
+
             <div style={{margin: '130px 0 130px 20px', textAlign: 'center'}}>
               <img src={logo} alt='company logo' style={{width: '80px'}}/>
               <p style={{fontSize: '55px', fontFamily: `'IBM Plex Serif', serif`, lineHeight: '50px'}}>Where <br/>All Athletes <br/>Belong.</p>
@@ -221,26 +215,54 @@ const Wrapper = styled.section`
         width: 100%;
         height: 50%;
     }
-
-    .intro-paragraph-div .hero-left {
-        position: absolute;
-        top: 50px;
+    .hero-left {
+        display: none;
+        
     }
-
-    .intro-paragraph-div .hero-left h1 {
-        font-family: 'Oswald', sans-serif;
+    .hero-left-mobile {
+        padding-bottom: 50px;
         text-align: left;
-        text-transform: uppercase;
-        margin: 0;
-        color: white;
     }
 
-    .intro-paragraph-div .hero-left p {
-        color: white
+    .hero-left-mobile h1 {
+        letter-spacing: -2px;
+        text-transform: uppercase;
+        font-size: 3rem;
+        margin: 0;
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .hero-left-mobile p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .hero-left-mobile button {
+        margin-right: 10px;
     }
 
     h2 {
         text-align: left
+    }
+
+    .trending-section {
+        padding-bottom: 50px;
+    }
+
+    .latest-section, .member-access {
+        padding-bottom: 80px;
+    }
+
+    .latest-section button {
+        margin-top: 20px;
+        text-align: left;
+    }
+    .member-access {
+        text-align: left;
+    }
+
+    .member-access button {
+        margin-top: 20px;
     }
 
     .air-max-div {
@@ -260,6 +282,30 @@ const Wrapper = styled.section`
         .intro-paragraph {
             margin: 0 40px;
         }
+
+        .hero-left-mobile {
+            display: none;
+        }
+
+        .hero-left {
+            display: block
+            position: absolute;
+            top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .hero-left h1 {
+            font-family: 'Oswald', sans-serif;
+            text-align: left;
+            text-transform: uppercase;
+            margin: 0;
+            color: white;
+        }
+    
+        .hero-left p {
+            color: white
+        }
+
         .trending-section {
             display: flex;
         }
