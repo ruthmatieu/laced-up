@@ -86,11 +86,10 @@ const NewHome = ({data}) => {
 
             <div className='intro-paragraph'>
                 <div className='intro-paragraph-div'>
-                    <img className='desktop-hero' src={landingHero} alt='man running track'/>
+                    {/* <img className='desktop-hero' src={landingHero} alt='man running track'/> */}
                     <img className='mobile-hero' src={mobileHero} alt='man running track'/>
                     <div className='hero-left'>
-                        <h1 className='heading-small'>new year,<br/>new energy.</h1>
-                        <h1 className='heading-big'>new <br/>year,<br/>new <br/>energy.</h1>
+                        <h1>new year,<br/>new energy.</h1>
                         <p>Take on anything the new year throws your way in<br/>these functional styles.</p>
                         <Link to='/shop'><button className='hero-btn'>Shop</button></Link>
                         <button>Explore</button>
@@ -149,8 +148,9 @@ const NewHome = ({data}) => {
                     <Link to='/membership'><button>Sign Up</button></Link>
                 </div>
 
+                <h2>The Best of Air Max</h2>
                 <div className='air-max-section'>
-                    <h2>The Best of Air Max</h2>
+                    
                     <div className='air-max-div'>
                         
                         {secondSection.map(item => (
@@ -238,6 +238,7 @@ const Wrapper = styled.section`
     }
 
     .hero-left-mobile button {
+        font-size: 1rem;
         margin-right: 10px;
     }
 
@@ -256,6 +257,7 @@ const Wrapper = styled.section`
     .latest-section button {
         margin-top: 20px;
         text-align: left;
+        font-size: 1rem;
     }
     .member-access {
         text-align: left;
@@ -263,6 +265,7 @@ const Wrapper = styled.section`
 
     .member-access button {
         margin-top: 20px;
+        font-size: 1rem;
     }
 
     .air-max-div {
@@ -270,7 +273,7 @@ const Wrapper = styled.section`
     }
 
     @media only screen and ${breakpoint.device.tablet} {
-        background-color: yellow;
+        //background-color: yellow;
 
         .mobile-hero {
             display: none;
@@ -283,27 +286,49 @@ const Wrapper = styled.section`
             margin: 0 40px;
         }
 
+        .intro-paragraph-div {
+            height: 550px;
+            background-image: url(${landingHero});
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 70px;
+        }
+
         .hero-left-mobile {
             display: none;
         }
 
         .hero-left {
-            display: block
-            position: absolute;
-            top: 50px;
-            padding-bottom: 50px;
+            display: block;
+            padding-top: 150px;
+            text-align: left;
+            top: 80px;
+            padding-left: 50px;
         }
 
         .hero-left h1 {
             font-family: 'Oswald', sans-serif;
-            text-align: left;
             text-transform: uppercase;
+            font-size: 3.5rem;
             margin: 0;
             color: white;
         }
     
         .hero-left p {
-            color: white
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: white;
+        }
+    
+        .hero-left button {
+            margin-right: 10px;
+            color: #111;
+            font-size: 1rem;
+            background-color: white;
+        }
+
+        .hero-left button:hover {
+            cursor: pointer;
         }
 
         .trending-section {
@@ -321,7 +346,7 @@ const Wrapper = styled.section`
     }
 
     @media only screen and ${breakpoint.device.desktop} {
-        background-color: red;
+        //background-color: red;
 
         .intro-paragraph {
             margin: 0 60px;

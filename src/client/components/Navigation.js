@@ -107,7 +107,7 @@ p, .nav-btn {
  .cart-notifications {
     position: absolute;
     left: 30px;
-    top: -9px;
+    top: -12px;
     background-color: crimson;
     color: white;
     border-radius: 50%;
