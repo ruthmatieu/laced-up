@@ -6,6 +6,8 @@ import Footer from './Footer';
 
 
 const Shop = ({data, addToCart}) => {
+    document.title = 'LacedUp | All Shoes';
+
     console.log('dataaa', data)
     const params = useParams();
     console.log('params', params);
@@ -50,7 +52,7 @@ const Shop = ({data, addToCart}) => {
                                     <p className='thin-desc'>{item.availability}</p>
                                     <p className='bold-desc'>${item.price}</p>
                                     <br/>
-                                    {/* <button onClick={() => addToCart(item, 1)}>Add to Cart</button> */}
+                                    <button onClick={() => addToCart(item, 1)}>Add to Cart</button>
                                 </div>
                             </div>
                         </div>)

@@ -15,10 +15,10 @@ const Navigation = ({cart}) => {
         <div className='mobile-nav-items'>
             <div>
                 <MenuLink to='/'><p>Home</p></MenuLink>
-                <MenuLink to='/shop'><p>New Releases</p></MenuLink>
-                <MenuLink to='/shop'><p>Men</p></MenuLink>
-                <MenuLink to='/shop'><p>Women</p></MenuLink>
-                <MenuLink to='/shop'><p>All Shoes</p></MenuLink>
+                <MenuLink to='/new-releases'><p>New Releases</p></MenuLink>
+                <MenuLink to='/men-shoes'><p>Men</p></MenuLink>
+                <MenuLink to='/women-shoes'><p>Women</p></MenuLink>
+                <MenuLink to='/all-shoes'><p>All Shoes</p></MenuLink>
             </div>
             <div>
                 <MenuLink to='/membership'><button className='nav-btn'>Join us</button></MenuLink>
@@ -42,10 +42,10 @@ const Navigation = ({cart}) => {
             <div className='desktop-nav'>
                 <div className='menu-left'>
                 <MenuLink to='/'><p>Home</p></MenuLink>
-                <MenuLink to='/shop'><p>New Releases</p></MenuLink>
-                <MenuLink to='/shop'><p>Men</p></MenuLink>
-                <MenuLink to='/shop'><p>Women</p></MenuLink>
-                <MenuLink to='/shop'><p>All Shoes</p></MenuLink>
+                <MenuLink to='/new-releases'><p>New Releases</p></MenuLink>
+                <MenuLink to='/men-shoes'><p>Men</p></MenuLink>
+                <MenuLink to='/women-shoes'><p>Women</p></MenuLink>
+                <MenuLink to='/all-shoes'><p>All Shoes</p></MenuLink>
                 </div>
                 <div className='menu__btns'>
                     {cart.length > 0 ? 
@@ -86,13 +86,14 @@ const Wrapper = styled.nav`
   }
 
   .mobile-nav-items {
-    background-color: yellow;
+    background-color: white;
     width: 100vw;
-   position: absolute;
-   margin-top: 50px;
-   top: 0;
-   right: 0;
-   z-index: 1;
+    position: absolute;
+    margin-top: 50px;
+    padding: 40px 0 60px 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
   }
     
 p, .nav-btn {

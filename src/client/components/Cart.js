@@ -1,21 +1,25 @@
 import React from 'react';
-import {useParams} from 'react-router-dom';
+//import {useParams} from 'react-router-dom';
 import EmptyCart from './EmptyCart';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import breakpoint from '../../breakpoint';
 import Footer from './Footer'
 
 const Cart = ({length, cartItems, totalPrice}) => {
-    console.log('cart items', cartItems)
-    const params = useParams();
-    console.log('params', params)
 
-    //totals up item costs
+    //console.log('cart items', cartItems)
+    //const params = useParams();
+    //console.log('params', params)
+
+    /*
+    totals up item costs
     const totalQty = cartItems.reduce((prev, curr) => {
         return prev + curr.qty
     }, 0);
     console.log('total qty:',totalQty)
+    */
+   document.title = 'LacedUp | My Cart';
 
     const tax = totalPrice * 0.07;
 
@@ -24,8 +28,10 @@ const Cart = ({length, cartItems, totalPrice}) => {
         return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     }
 
-    const removeItem = () => {
-
+    const removeItem = (e) => {
+        cartItems.filter((item) => (
+            item.id
+        ))
     }
 
     const editItem = () => {
@@ -62,8 +68,10 @@ const Cart = ({length, cartItems, totalPrice}) => {
                             <div>
                                 <h3>{item.product.name}</h3>
                                 <h5>Qty: {item.qty}</h5> 
+                                <p onClick={removeItem}>Remove</p>
                             </div>
                             <p>${item.product.price}</p>
+                            
                         </div>
                         
                         }
@@ -82,7 +90,7 @@ const Cart = ({length, cartItems, totalPrice}) => {
                         <p>$0.00</p>
                     </div>
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                        <p>Tax</p>
+                        <p>Estimated Tax</p>
                         <p>{formatMoney(tax)}</p>
                     </div>
                     

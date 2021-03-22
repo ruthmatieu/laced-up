@@ -27,6 +27,10 @@ const Home = ({ data }) => {
     const shoe = data.find(item => `${item.id}` === params.id);
     console.log("heroes", shoe)
 
+    const latestAndGreatest = data.filter(item => (
+      item.newRealse === true
+    ))
+
     const shoes = [
         {
         name: '',
@@ -109,9 +113,9 @@ const Home = ({ data }) => {
             <h2 style={{textAlign: 'left', marginTop: '70px'}}>The Latest And Greatest</h2>
 
             <div style={{display: 'flex', overflowY: 'hidden', overflowX: 'auto', whiteSpace: 'nowrap'}}>
-              {data.map(item => {
+              {latestAndGreatest.map((item, index) => {
                 return (
-                  <div key={item.id}>
+                  <div key={index}>
                     <div>
                     <Link to={`/shoe/${item.id}`}><img src={item.image} alt={item.name} style={{width: '300px', marginRight: '7px'}}/></Link>
                       <div style={{textAlign: 'left'}}>

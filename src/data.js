@@ -34,6 +34,7 @@ export const data = [
         image: one,
         price: 160,
         availability: '2 colors',
+        newRealse: false,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
     {
@@ -42,6 +43,7 @@ export const data = [
         subTitle: `Women's Shoe`,
         image: two,
         availability: '2 colors',
+        newRealse: false,
         price: 110,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -51,6 +53,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: three,
         availability: '3 colors',
+        newRealse: false,
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -60,6 +63,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: four,
         availability: '5 colors',
+        newRealse: false,
         price: 225,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -69,6 +73,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: five,
         availability: '3 colors',
+        newRealse: false,
         price: 185,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -78,6 +83,7 @@ export const data = [
         subTitle: `Women's Shoe`,
         image: six,
         availability: '2 colors',
+        newRealse: false,
         price: 165,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -87,6 +93,7 @@ export const data = [
         subTitle: `Women's Shoe`,
         image: seven,
         availability: '2 colors',
+        newRealse: false,
         price: 185,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -96,6 +103,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: eight,
         availability: '2 colors',
+        newRealse: true,
         price: 200,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -105,6 +113,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: nine,
         availability: '2 colors',
+        newRealse: false,
         price: 130,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -113,6 +122,8 @@ export const data = [
         name: 'Nike HyperSpeed Court',
         subTitle: `Women's Shoe`,
         image: ten,
+        availability: '2 colors',
+        newRealse: false,
         price: 120,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -122,6 +133,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: eleven,
         availability: '1 color',
+        newRealse: true,
         price: 90,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -131,6 +143,7 @@ export const data = [
         subTitle: `Women's Shoe`,
         image: twelve,
         availability: '2 colors',
+        newRealse: true,
         price: 125,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -140,6 +153,7 @@ export const data = [
         subTitle: `Women's Shoe`,
         image: thirteen,
         availability: '2 colors',
+        newRealse: false,
         price: 100,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -149,6 +163,7 @@ export const data = [
         subTitle: `Women's Shoe`,
         image: fourteen,
         availability: '2 colors',
+        newRealse: false,
         price: 110,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -158,6 +173,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: fifteen,
         availability: '2 colors',
+        newRealse: false,
         price: 120,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -167,6 +183,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: sixteen,
         availability: '2 colors',
+        newRealse: true,
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -176,6 +193,7 @@ export const data = [
         subTitle: `Women's Shoe`,
         image: seventeen,
         availability: '2 colors',
+        newRealse: false,
         price: 145,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -185,6 +203,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: eighteen,
         availability: '2 colors',
+        newRealse: false,
         price: 80,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -194,6 +213,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: nineteen,
         availability: '2 colors',
+        newRealse: false,
         price: 85,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -203,6 +223,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: twenty,
         availability: '2 colors',
+        newRealse: false,
         price: 120,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -212,6 +233,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: twentyOne,
         availability: '2 colors',
+        newRealse: true,
         price: 200,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -221,6 +243,7 @@ export const data = [
         subTitle: `Women's Shoe`,
         image: twentyTwo,
         availability: '2 colors',
+        newRealse: false,
         price: 135,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -230,6 +253,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: twentyThree,
         availability: '2 colors',
+        newRealse: false,
         price: 170,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -239,6 +263,7 @@ export const data = [
         subTitle: `Women's Shoe`,
         image: twentyFour,
         availability: '3 colors',
+        newRealse: false,
         price: 165,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     },
@@ -248,6 +273,7 @@ export const data = [
         subTitle: `Men's Shoe`,
         image: twentyFive,
         availability: '1 color',
+        newRealse: false,
         price: 130.00,
         description: `The Nike Air Max Plus Men's Shoe brings back the legendary "Tuned" Air cushioning and energetic design lines of the 1998 original`
     }

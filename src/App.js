@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import {Switch, Link, Route} from 'react-router-dom';
-import { GiHamburgerMenu } from 'react-icons/gi';
 import styled from 'styled-components';
 import breakpoint from './breakpoint';
 import { data } from './data';
 import Cart from './client/components/Cart';
-import Home from './client/components/Home';
+import Men from './client/components/MenShoes';
+import Women from './client/components/WomenShoes';
 import Shop from './client/components/Shop';
+import NewRelease from './client/components/NewRelease';
 import Shoe from './client/components/Shoe';
+import NewHome from './client/components/NewHome';
 import Login from './client/user/Login';
 import Register from './client/user/Register';
 import logo from './images/logo.png';
@@ -18,16 +20,6 @@ import { GrCart } from 'react-icons/gr';
 import Navigation from "./client/components/Navigation";
 const App = () => {
   const [cart, setCart] = useState([]);
-  const [mobileMenu, setMobileMenu] = useState();
-
-  useEffect(() => {
-
-    const setHamburgerMenu = () => {
-
-    }
-    setHamburgerMenu();
-
-  },[])
 
   //adds users selected item
   const addToCart = (product, qty) => {
@@ -71,12 +63,21 @@ const App = () => {
 
         <Switch>
           <Route exact path='/'>
-            <Home data={data}/>
+            <NewHome data={data}/>
+          </Route>
+          <Route exact path='/men-shoes'>
+            <Men data={data} addToCart={addToCart}/>
+          </Route>
+          <Route exact path='/women-shoes'>
+            <Women data={data} addToCart={addToCart}/>
+          </Route>
+          <Route exact path='/new-releases'>
+            <NewRelease data={data} addToCart={addToCart}/>
           </Route>
           <Route exact path='/shoe/:id'>
             <Shoe data={data} addToCart={addToCart} cartItems={cart}/>
           </Route>
-          <Route exact path='/shop'>
+          <Route exact path='/all-shoes'>
             <Shop data={data} addToCart={addToCart}/>
           </Route>
           <Route exact path='/cart'>
