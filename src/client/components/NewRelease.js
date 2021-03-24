@@ -44,7 +44,7 @@ const NewRelease = ({data, addToCart}) => {
                     </ul>
                         
 
-                <section>
+                <section style={{paddingBottom: '150px'}}>
                 
                     {newReleaseData.map(item => (
                     

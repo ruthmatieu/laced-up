@@ -15,7 +15,6 @@ const data = {
     lastName: '',
     dob: '',
     location: '',
-    gender: '',
     updates: false
 }
 
@@ -26,7 +25,6 @@ const error = {
     lastName: '',
     dob: '',
     location: '',
-    gender: '',
     updates: false
 }
 
@@ -92,10 +90,9 @@ const Register = () => {
             lastName: '',
             dob: '',
             location: '',
-            gender: '',
             updates: false
         })
-        history.push('/membership/success')
+        history.push('/')
     }
 
     
@@ -446,7 +443,7 @@ const Register = () => {
                     {(errorState.location.length > 0) ? <p className='error'>{errorState.location}</p>: null}
                 </label>
                 <br/>
-                <label htmlFor='male'>
+                {/* <label htmlFor='male'>
                     <input
                         type='radio'
                         id='male'
@@ -456,7 +453,7 @@ const Register = () => {
                         onChange={changeHandler}
                     />
                     Male
-                    {/* {(errorState.gender.length > 0) ? <p>{errorState.gender}</p>: null} */}
+                    {/* {(errorState.gender.length > 0) ? <p>{errorState.gender}</p>: null}
                 </label>
                 <label htmlFor='female'>
                     <input
@@ -469,7 +466,7 @@ const Register = () => {
                     />
                     Female
                     {(errorState.gender.length > 0) ? <p className='error'>{errorState.gender}</p>: null}
-                </label>
+                </label> */}
                 <br/>
                 <div style={{display: 'flex'}}>
                     <label htmlFor='updates'>

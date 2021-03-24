@@ -40,10 +40,12 @@ const Cart = ({length, cartItems, totalPrice}) => {
 
     return (
         <div>
-            <p>
+
+            { cartItems.length >= 1 ? 
+            <div>
+                <p>
                 {cartItems.length === 1 ? `You have ${cartItems.length} item in your cart` : 
-                (cartItems.length > 1 ? `You have ${cartItems.length} items in your cart`: 
-                <EmptyCart/>)}
+                cartItems.length > 1 ? `You have ${cartItems.length} items in your cart` : '' }
             </p>
 
             <Wrapper>
@@ -51,8 +53,9 @@ const Cart = ({length, cartItems, totalPrice}) => {
 
                 
                 {cartItems.map((item, index) => (
-                    <div key={index} style={{}}>
+                    <div key={index}>
                         {item.product.length === 1 ? 
+                        <div>
                         <div style={{display: 'flex'}}>
                             <img src={item.product.image} alt={item.product.name} style={{width: '150px'}}/>
                             <div>
@@ -61,6 +64,7 @@ const Cart = ({length, cartItems, totalPrice}) => {
                                 <h5>Qty: {item.qty}</h5> 
                             </div>
                         </div> 
+                    </div>
                         : 
                         <div style={{display: 'flex', justifyContent: 'space-between', margin: '15px 40px', borderTop: '1px solid #404040'}}>
                             
@@ -75,31 +79,38 @@ const Cart = ({length, cartItems, totalPrice}) => {
                         </div>
                         
                         }
+                        
 
                     </div>
                 ))}
+                
+                
                 </div>
                 <div className='product-checkout'>
-                    <h4>Summary</h4>
-                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                        <p>Subtotal</p>
-                        <p>{formatMoney(totalPrice)}</p>
+                        <h4>Summary</h4>
+                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                            <p>Subtotal</p>
+                            <p>{formatMoney(totalPrice)}</p>
+                        </div>
+                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                            <p>Estimated Shipping & Handling</p>
+                            <p>$0.00</p>
+                        </div>
+                        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                            <p>Estimated Tax</p>
+                            <p>{formatMoney(tax)}</p>
+                        </div>
+                        
+                        <p style={{backgroundColor: '#131921', color: 'white', padding: '10px 0'}}>Total: {formatMoney(totalPrice + tax)}</p>
+                        <div>
+                            <button>Checkout</button>
+                        </div>
                     </div>
-                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                        <p>Estimated Shipping & Handling</p>
-                        <p>$0.00</p>
-                    </div>
-                    <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                        <p>Estimated Tax</p>
-                        <p>{formatMoney(tax)}</p>
-                    </div>
-                    
-                    <p style={{backgroundColor: '#131921', color: 'white', padding: '10px 0'}}>Total: {formatMoney(totalPrice + tax)}</p>
-                    <div>
-                        <button>Checkout</button>
-                    </div>
-                </div>
-            </Wrapper>
+            </Wrapper> 
+            </div>
+                :
+                <EmptyCart/>
+            }
             <Footer/>
         </div>
     )

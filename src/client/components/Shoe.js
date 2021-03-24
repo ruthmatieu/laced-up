@@ -43,6 +43,7 @@ const Shoe = ({data, addToCart}) => {
                 <div className='shoe-div'>
                     <img src={shoe.image} alt={shoe.name}/>
                     <button className='mobile-btn' onClick={() => addToCart(shoe, 1)}>Add to Cart</button>
+                    <Link to='/all-shoes'><button className='continue-btn-mobile'>Continue Shopping</button></Link>
 
                 </div>
                 
@@ -53,7 +54,7 @@ const Shoe = ({data, addToCart}) => {
                         <p style={{margin: '0', fontSize: '25px', fontWeight: '700'}}>{shoe.name}</p>
                         
                         <div>
-                            <p>
+                            <p className='shoe-desc'>
                             Let your attitude have the edge in your Nike Air Max Plus, a Tuned Air 
                             experience that offers premium stability and unbelievable cushioning. 
                             Featuring the OG's wavy design lines, plastic accents and airy fabric 
@@ -70,7 +71,7 @@ const Shoe = ({data, addToCart}) => {
                         </div>
 
                         <button onClick={() => addToCart(shoe, 1)} className='cart-btn'>Add to Cart</button>
-                        <Link to='/shop'><button className='continue-btn'>Continue Shopping</button></Link>
+                        <Link to='/all-shoes'><button className='continue-btn'>Continue Shopping</button></Link>
                     </div>
                     
                 </div>
@@ -84,6 +85,10 @@ const Shoe = ({data, addToCart}) => {
 export default Shoe;
 
 const MobileContainer = styled.div`
+
+    max-width: 1920px;
+    margin: 0 auto;
+
     @media only screen and ${breakpoint.device.desktop} {
         //background-color: red;
        
@@ -95,6 +100,10 @@ const MobileContainer = styled.div`
 `
 
 const Container = styled.div`
+
+    max-width: 1920px;
+    margin: 0 auto;
+
   .mobile-hero {
     display: block;
   }
@@ -103,22 +112,41 @@ const Container = styled.div`
     letter-spacing: -2px;
   }
 
-  p {
+  .shoe-desc {
       text-align: left;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      padding-bottom: 50px;
+      margin-right: 50px;
   }
+
   img {
     width: 100%;
   }
 
   ul li {
       text-align: left;
+      color: gray;
+      padding-bottom: 5px;
   }
+
   .mobile-btn {
     border-radius: 0;
-    width: 100%;
+    width: 70%;
     padding: 20px 0;
     text-align: center;
-    margin-bottom: 80px;
+    margin-top: 20px;
+  }
+
+  .continue-btn-mobile {
+    border-radius: 0;
+    border: 1px solid gray;
+    width: 70%;
+    padding: 20px 0;
+    text-align: center;
+    background-color: white;
+    color: #111;
+    margin: 10px 0 150px 0;
   }
 
   .desktop-hero, .desktop-desc {
@@ -163,7 +191,7 @@ const Container = styled.div`
     @media only screen and ${breakpoint.device.desktop} {
         //background-color: red;
         display: flex;
-        margin: 120px 50px;
+        //margin: 120px 50px;
 
         img {
             width: 600px;
@@ -177,8 +205,13 @@ const Container = styled.div`
             display: none;
         }
 
+        .continue-btn-mobile {
+            display: none;
+        }
+
         .shoe-div {
             width: 60%;
+            padding-bottom: 50px;
         }
 
         .desktop-desc {
