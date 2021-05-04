@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import breakpoint from '../../breakpoint';
 
@@ -18,16 +19,16 @@ import four from '../../images/landing-4.png';
 import five from '../../images/landing-5.png';
 import six from '../../images/landing-6.png';
 
-const NewHome = ({data}) => {
+const NewHome = (props) => {
 
     document.title = 'LacedUp | Stylish Sneakers For Less | Home';
   
     const params = useParams();
     
-    const shoe = data.find(item => `${item.id}` === params.id);
+    const shoe = props.products.find(item => `${item.id}` === params.id);
     console.log("heroes", shoe)
 
-    const latestAndGreatest = data.filter(item => (
+    const latestAndGreatest = props.products.filter(item => (
         item.newRealse === true
     ))
 
@@ -185,7 +186,13 @@ const NewHome = ({data}) => {
     )
 }
 
-export default NewHome;
+const mappedStateToProps = (state) => {
+    return {
+      products: state.products.products
+    }
+  }
+  export default connect(mappedStateToProps)(NewHome);
+  
 
 const Wrapper = styled.section`
 

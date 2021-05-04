@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import {Switch, Link, Route} from 'react-router-dom';
 import styled from 'styled-components';
 import breakpoint from './breakpoint';
-import { data } from './data';
 import Cart from './client/components/Cart';
-import Men from './client/components/MenShoes';
-import Women from './client/components/WomenShoes';
+import Men from './client/components/products/MenShoes';
+import Women from './client/components/products/WomenShoes';
 import Shop from './client/components/Shop';
-import NewRelease from './client/components/NewRelease';
+import NewRelease from './client/components/products/NewRelease';
 import Shoe from './client/components/Shoe';
-import NewHome from './client/components/NewHome';
+import Home from './client/components/NewHome';
 import Login from './client/user/Login';
 import Register from './client/user/Register';
 import logo from './images/logo.png';
@@ -63,22 +62,22 @@ const App = () => {
 
         <Switch>
           <Route exact path='/'>
-            <NewHome data={data}/>
+            <Home/>
           </Route>
           <Route exact path='/men-shoes'>
-            <Men data={data} addToCart={addToCart}/>
+            <Men addToCart={addToCart}/>
           </Route>
           <Route exact path='/women-shoes'>
-            <Women data={data} addToCart={addToCart}/>
+            <Women addToCart={addToCart}/>
           </Route>
           <Route exact path='/new-releases'>
-            <NewRelease data={data} addToCart={addToCart}/>
+            <NewRelease addToCart={addToCart}/>
           </Route>
           <Route exact path='/shoe/:id'>
-            <Shoe data={data} addToCart={addToCart} cartItems={cart}/>
+            <Shoe addToCart={addToCart} cartItems={cart}/>
           </Route>
           <Route exact path='/all-shoes'>
-            <Shop data={data} addToCart={addToCart}/>
+            <Shop addToCart={addToCart}/>
           </Route>
           <Route exact path='/cart'>
             <Cart length={cart.length} cartItems={cart} totalPrice={totalPrice}/>

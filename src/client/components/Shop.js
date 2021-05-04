@@ -1,24 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
+import { connect } from 'react-redux';
 import breakpoint from '../../breakpoint';
 import Footer from './Footer';
 
 
-const Shop = ({data, addToCart}) => {
+const Shop = (props) => {
     document.title = 'LacedUp | All Shoes';
 
-    console.log('dataaa', data)
+    //console.log('dataaa', data)
     const params = useParams();
     console.log('params', params);
 
-    const shoe = data.find(item => `${item.id}` === params.id);
+    const shoe = props.products.find(item => `${item.id}` === params.id);
     console.log("shoes from shop:", shoe)
 
     return (
         <div>
             <Wrapper > 
-            <h3>All Shoes ({data.length})</h3>
+            <h3>All Shoes ({props.products.length})</h3>
             <div style={{display: 'flex'}}>
 
                     <ul className='shoe-type desktop-filter'>
@@ -41,7 +42,7 @@ const Shop = ({data, addToCart}) => {
 
                 <section>
                 
-                    {data.map(item => {
+                    {props.products.map(item => {
                         return(
                         <div className='shoe-info-wrapper' key={item.id}>
                             <div className='shoe-info-sub-wrapper'>
@@ -52,7 +53,7 @@ const Shop = ({data, addToCart}) => {
                                     <p className='thin-desc'>{item.availability}</p>
                                     <p className='bold-desc'>${item.price}</p>
                                     <br/>
-                                    <button onClick={() => addToCart(item, 1)}>Add to Cart</button>
+                                    <button onClick={() => props.addToCart(item, 1)}>Add to Cart</button>
                                 </div>
                             </div>
                         </div>)
@@ -68,7 +69,12 @@ const Shop = ({data, addToCart}) => {
     )
 }
 
-export default Shop;
+const mappedStateToProps = (state) => {
+    return {
+        products: state.products.products
+    }
+}
+export default connect(mappedStateToProps)(Shop);
 
 const Wrapper = styled.div `
     padding: '0 3vw';

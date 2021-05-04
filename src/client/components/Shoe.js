@@ -1,16 +1,17 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 import { Link} from 'react-router-dom';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import breakpoint from '../../breakpoint';
 // import ShoeSize from './ShoeSize';
 import Footer from './Footer';
 
-const Shoe = ({data, addToCart}) => {
-    console.log(data.id)
+const Shoe = (props) => {
+    //console.log(props.products.id)
     const params = useParams();
 
-    const shoe = data.find(item => `${item.id}` === params.id);
+    const shoe = props.products.find(item => `${item.id}` === params.id);
 
     document.title = `LacedUp | ${shoe.name}`;
     
@@ -42,7 +43,7 @@ const Shoe = ({data, addToCart}) => {
             <Container>
                 <div className='shoe-div'>
                     <img src={shoe.image} alt={shoe.name}/>
-                    <button className='mobile-btn' onClick={() => addToCart(shoe, 1)}>Add to Cart</button>
+                    <button className='mobile-btn' onClick={() => props.addToCart(shoe, 1)}>Add to Cart</button>
                     <Link to='/all-shoes'><button className='continue-btn-mobile'>Continue Shopping</button></Link>
 
                 </div>
@@ -70,7 +71,7 @@ const Shoe = ({data, addToCart}) => {
                             </ul>
                         </div>
 
-                        <button onClick={() => addToCart(shoe, 1)} className='cart-btn'>Add to Cart</button>
+                        <button onClick={() => props.addToCart(shoe, 1)} className='cart-btn'>Add to Cart</button>
                         <Link to='/all-shoes'><button className='continue-btn'>Continue Shopping</button></Link>
                     </div>
                     
@@ -82,7 +83,13 @@ const Shoe = ({data, addToCart}) => {
     )
 }
 
-export default Shoe;
+const mappedStateToProps = (state) => {
+    return {
+        products: state.products.products
+    }
+}
+export default connect(mappedStateToProps)(Shoe);
+
 
 const MobileContainer = styled.div`
 
