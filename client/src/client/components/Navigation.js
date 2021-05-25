@@ -130,13 +130,7 @@ const Wrapper = styled.nav`
   }
 
   @media only screen and ${breakpoint.device.tablet} {
-    // .desktop-nav {
-    //     display: block;
-    //     display: flex;
-    //     max-width: 1920px;
-    //     margin: 0 auto;
-    //     padding: 0;  
-    // }
+  
   }
 
   @media only screen and ${breakpoint.device.desktop} {
