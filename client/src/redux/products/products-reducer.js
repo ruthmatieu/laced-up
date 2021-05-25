@@ -51,7 +51,7 @@ const initialState = {
     },
     {
         id: 3,
-        name: `Nike Air Force 1 '07`,
+        name: 'Air Jordan 11',
         subTitle: `Men's Shoe`,
         image: three,
         availability: '3 colors',
@@ -131,7 +131,7 @@ const initialState = {
     },
     {
         id: 11,
-        name: 'Nike Air Force 1',
+        name: 'Air Jordan Mid 1',
         subTitle: `Men's Shoe`,
         image: eleven,
         availability: '1 color',
@@ -181,7 +181,7 @@ const initialState = {
     },
     {
         id: 16,
-        name: 'Nike Air Force 1',
+        name: 'Jordan MA2',
         subTitle: `Men's Shoe`,
         image: sixteen,
         availability: '2 colors',

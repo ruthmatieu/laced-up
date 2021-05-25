@@ -8,7 +8,7 @@ import Women from './client/components/products/WomenShoes';
 import Shop from './client/components/Shop';
 import NewRelease from './client/components/products/NewRelease';
 import Shoe from './client/components/Shoe';
-import Home from './client/components/NewHome';
+import Home from './client/components/Home';
 import Login from './client/user/Login';
 import Register from './client/user/Register';
 import logo from './images/logo.png';
@@ -20,11 +20,11 @@ import Navigation from "./client/components/Navigation";
 const App = () => {
   const [cart, setCart] = useState([]);
 
-  //adds users selected item
+  //adds shoe to cart
   const addToCart = (product, qty) => {
-    const item = {product, qty}
+    const item = { product, qty }
     setCart([...cart, item]);
-    console.log(`${product} has been added to cart.`)    
+    console.log(`${product.name} has been added to cart.`)    
   }
   console.log('Selected Items:', cart)
 

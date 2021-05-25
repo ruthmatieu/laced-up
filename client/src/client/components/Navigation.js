@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import breakpoint from '../../breakpoint';
 
 const Navigation = ({cart}) => {
+    //toggle state of responsive menu - mobile set to false
     const [showMenu, setShowMenu] = useState(false);
 
     let menu
@@ -14,11 +15,11 @@ const Navigation = ({cart}) => {
         menu = 
         <div className='mobile-nav-items'>
             <div>
-                <MenuLink to='/'><p>Home</p></MenuLink>
-                <MenuLink to='/new-releases'><p>New Releases</p></MenuLink>
-                <MenuLink to='/men-shoes'><p>Men</p></MenuLink>
-                <MenuLink to='/women-shoes'><p>Women</p></MenuLink>
-                <MenuLink to='/all-shoes'><p>All Shoes</p></MenuLink>
+                <MenuLink to='/'><p className='menu-item'>Home</p></MenuLink>
+                <MenuLink to='/new-releases'><p className='menu-item'>New Releases</p></MenuLink>
+                <MenuLink to='/men-shoes'><p className='menu-item'>Men</p></MenuLink>
+                <MenuLink to='/women-shoes'><p className='menu-item'>Women</p></MenuLink>
+                <MenuLink to='/all-shoes'><p className='menu-item'>All Shoes</p></MenuLink>
             </div>
             <div>
                 <MenuLink to='/membership'><button className='nav-btn'>Join us</button></MenuLink>
@@ -30,9 +31,11 @@ const Navigation = ({cart}) => {
 
     return (
         <Wrapper>
+            {/* mobile menu icon */}
             <div className='mobile-nav'>
                 <span>
                     <GiHamburgerMenu 
+                        className='hamburger-btn'
                         size={30}
                         onClick={() => setShowMenu(!showMenu)} //toggles menu open and closed
                     />
@@ -41,13 +44,14 @@ const Navigation = ({cart}) => {
             </div>
             <div className='desktop-nav'>
                 <div className='menu-left'>
-                    <MenuLink to='/'><p>Home</p></MenuLink>
-                    <MenuLink to='/new-releases'><p>New Releases</p></MenuLink>
-                    <MenuLink to='/men-shoes'><p>Men</p></MenuLink>
-                    <MenuLink to='/women-shoes'><p>Women</p></MenuLink>
-                    <MenuLink to='/all-shoes'><p>All Shoes</p></MenuLink>
+                    <MenuLink to='/'><p className='menu-item'>Home</p></MenuLink>
+                    <MenuLink to='/new-releases'><p className='menu-item'>New Releases</p></MenuLink>
+                    <MenuLink to='/men-shoes'><p className='menu-item'>Men</p></MenuLink>
+                    <MenuLink to='/women-shoes'><p className='menu-item'>Women</p></MenuLink>
+                    <MenuLink to='/all-shoes'><p className='menu-item'>All Shoes</p></MenuLink>
                 </div>
                 <div className='menu__btns'>
+                    {/* display cart notification if items in cart are more than 0 */}
                     {cart.length > 0 ? 
                 <div>
                 <MenuLink to='/cart'><GrCart size={30}/></MenuLink>
@@ -74,12 +78,34 @@ export default Navigation;
 const Wrapper = styled.nav`
 
 
-.mobile-nav {
+  .mobile-nav {
     display: flex;
-    //display: none;
     justify-content: space-between;
     position: relative;
     z-index: 2;
+  }
+
+  .hamburger-btn:hover {
+      cursor: pointer;
+  }
+
+  .menu-item {
+      position: relative;
+  }
+
+  .menu-item::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 4px;
+    top: 100%;
+    background: red;
+    transition: transform 0.5s;
+    transform-origin: left;
+  }
+
+  .menu-item:hover::after {
+      transform: scaleX(1);
   }
 
   .desktop-nav {
@@ -96,10 +122,11 @@ const Wrapper = styled.nav`
     right: 0;
     z-index: 1;
   }
-    
-p, .nav-btn {
+
+  p, .nav-btn {
     margin: 0;
-}
+  }
+
   .menu__btns {
     display: flex;
     position: relative;
@@ -115,12 +142,12 @@ p, .nav-btn {
     text-align: center;
     height: 25px;
     width: 25px;
-
   }
 
   .cart-item-num {
     font-size: 12px;
   }
+
   @media only screen and ${breakpoint.device.tablet} {
     // .desktop-nav {
     //     display: block;
