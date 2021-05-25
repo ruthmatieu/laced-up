@@ -89,25 +89,6 @@ const Wrapper = styled.nav`
       cursor: pointer;
   }
 
-  .menu-item {
-      position: relative;
-  }
-
-  .menu-item::after {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 4px;
-    top: 100%;
-    background: red;
-    transition: transform 0.5s;
-    transform-origin: left;
-  }
-
-  .menu-item:hover::after {
-      transform: scaleX(1);
-  }
-
   .desktop-nav {
       display: none;
   }
