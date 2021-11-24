@@ -1,7 +1,7 @@
 # LacedUp - React Web App
 An e-commerce site that allows you to shop your favorite sneakers. Browse the collection and add your top picks to your cart.
 
-![Homepage](/client/src/images/screenshot_products.jpg)
+![Homepage](/src/images/screenshot_products.jpg)
 
 ## Table of Contents
 * [General Info](#general-info)
