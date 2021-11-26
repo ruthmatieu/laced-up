@@ -41,7 +41,7 @@ const App = () => {
           <Route exact path='/kids-shoes' element={<Kids data={data} addToCart={addToCart}/>}/>
           <Route exact path='/new-releases' element={<NewRelease data={data} addToCart={addToCart}/>}/>
           <Route exact path='/shoe/:id' element={<ShoeItem data={data} addToCart={addToCart} cartItems={cart}/>}/>
-          <Route exact path='/cart' element={<Cart cartItems={cart} totalPrice={totalPrice}/>}/>
+          <Route exact path='/cart' element={<Cart data={data} cartItems={cart} totalPrice={totalPrice}/>}/>
           <Route exact path='/sign-in' element={<Login/>}/>
           <Route exact path='/membership' element={<Register/>}/>
         </Routes>

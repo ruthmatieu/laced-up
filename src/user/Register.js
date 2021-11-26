@@ -103,15 +103,17 @@ const Register = () => {
         <div>
         <Nav/>
         <ShippingBanner/>
-        <Wrapper >
+        <Wrapper className="py-20 md:py-40">
             <form onSubmit={submitHandler}>
-                <img src={logo} alt='company logo' style={{width: '35px'}}/>
-                <h2 style={{textTransform: 'uppercase'}}>Become a Laced Up member</h2>
-                <p style={{fontSize: '14px', color: '#767676', lineHeight: '20px'}}>Create your Laced Up Member profile and get first <br/>access 
-                    to the very best of Laced Up products, <br/>inspiration and community.
-                </p>
-                <div className='input-wrapper'>
-                <label htmlFor='email'>
+                <img src={logo} alt='company logo' style={{width: '35px', display: 'block', margin: '0 auto'}}/>
+                <div className="my-10 text-center">
+                    <h2 className="uppercase text-xl md:text-2xl font-bold leading-none pb-6">Become a Laced Up member</h2>
+                    <p style={{fontSize: '14px', color: '#767676', lineHeight: '20px'}}>Create your Laced Up Member profile and get first <br/>access 
+                        to the very best of Laced Up products, <br/>inspiration and community.
+                    </p>
+                </div>
+                <div className='mx-5 -space-y-2'>
+                <label htmlFor='email' className="grid place-items-center">
                     <input
                         type='email'
                         id='email'
@@ -123,7 +125,7 @@ const Register = () => {
                     {(errorState.email.length > 0) ? <p className='error'>{errorState.email}</p>: null}
                 </label>
                 <br/>
-                <label htmlFor='password'>
+                <label htmlFor='password' className="grid place-items-center">
                     <input
                         type='password'
                         id='password'
@@ -135,7 +137,7 @@ const Register = () => {
                     {(errorState.password.length > 0) ? <p className='error'>{errorState.password}</p>: null}
                 </label>
                 <br/>
-                <label htmlFor='firstName'>
+                <label htmlFor='firstName' className="grid place-items-center">
                     <input
                         type='text'
                         id='firstName'
@@ -147,7 +149,7 @@ const Register = () => {
                     {(errorState.firstName.length > 0) ? <p className='error'>{errorState.firstName}</p>: null}
                 </label>
                 <br/>
-                <label htmlFor='lastName'>
+                <label htmlFor='lastName' className="grid place-items-center">
                     <input
                         type='text'
                         id='lastName'
@@ -159,7 +161,7 @@ const Register = () => {
                     {(errorState.lastName.length > 0) ? <p className='error'>{errorState.lastName}</p>: null}
                 </label>
                 <br/>
-                <label htmlFor='dob'>
+                <label htmlFor='dob' className="grid place-items-center">
                     <input
                         type='date'
                         id='dob'
@@ -174,7 +176,7 @@ const Register = () => {
                     />
                     {(errorState.dob.length > 0) ? <p className='error'>{errorState.dob}</p>: null}
                 </label>
-                <p style={{fontSize: '13px', color: '#767676'}}>Get a Laced Up Member Reward every year on your Birthday.</p>
+                <p className="text-xs pt-4" style={{color: '#767676'}}>Get a Laced Up Member Reward every year on your Birthday.</p>
                 <br/>
                 <label htmlFor='country' className='country'>
                     <select name="country" id="country">
@@ -289,7 +291,7 @@ const Register = () => {
                             <option value="TT" label="Trinidad and Tobago">Trinidad and Tobago</option>
                             <option value="TC" label="Turks and Caicos Islands">Turks and Caicos Islands</option>
                             <option value="VI" label="U.S. Virgin Islands">U.S. Virgin Islands</option>
-                            <option value="US" label="United States">United States</option>
+                            <option value="US" label="United States" selected="selected">United States</option>
                             <option value="UY" label="Uruguay">Uruguay</option>
                             <option value="VE" label="Venezuela">Venezuela</option>
                         </optgroup>
@@ -473,7 +475,7 @@ const Register = () => {
                 </label> */}
                 <br/>
                 <div style={{display: 'flex'}}>
-                    <label htmlFor='updates'>
+                    <label htmlFor='updates' className="grid place-items-center">
                         <input
                             className='aye'
                             type='checkbox'
@@ -486,13 +488,16 @@ const Register = () => {
                         {/* {(errorState.updates.length > 0) ? <p className='error'>{errorState.updates}</p>: null} */}
                     </label>
                     
-                    <p style={{fontSize: '12px', color: '#767676', margin: '0', textAlign: 'left', paddingLeft: '20px'}}>Sign up for emails to get updates from Nike on products, offers, and your Member benefits</p>
+                    <p className="text-xs pl-3" style={{ color: '#767676', margin: '0'}}>Sign up for emails to get updates from Nike on products, offers, and your Member benefits</p>
                 </div>
                 </div>
                 <br/> 
-                <p style={{fontSize: '13px', color: '#767676'}}>By creating an account, you agree to Laced Up's Privacy Policy and Terms of Use.</p>
-                <button type='submit' className='submit'>Join us</button>
-                <p style={{fontSize: '13px', color: '#767676'}}>Already a member? <Link to='/sign-in' style={{color: '#000'}}>Log in</Link>.</p>
+                <div className="px-5 flex flex-col items-center justify-center" style={{margin: '0 auto'}}>
+                    <p className="text-xs text-center pb-6" style={{color: '#767676'}}>By creating an account, you agree to Laced Up's <span className="underline">Privacy Policy</span> and <span className="underline">Terms of Use</span>.</p>
+                    <button type='submit' className='submit'>Join us</button>
+                    <p className="text-xs pt-6" style={{color: '#767676'}}>Already a member? <Link to='/sign-in' style={{color: '#000'}}>Log in</Link>.</p>
+                </div>
+                
             </form>
             
         </Wrapper>
@@ -505,13 +510,9 @@ const Register = () => {
 export default Register;
 
 const Wrapper = styled.div`
-    padding: 150px 0 150px 0;
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
-    label {
-        display: grid;
-        place-items: center;
-    }
+
     input[type='text'] {
         width: 100%;
         height: 40px;
@@ -537,6 +538,7 @@ const Wrapper = styled.div`
     input[type='date'] {
         width: 100%;
         height: 40px;
+        color: #ADB3BD;
         border: 1px solid #E5E5E5;
         border-radius: 3px;
         padding: 0 16px;
@@ -549,23 +551,29 @@ const Wrapper = styled.div`
       input[type="date"]:valid:before {
         content: '';
       }
+
     .country {
         display: grid;
         place-items: center;
     }
     select {
-        max-width: 100%;
+        width: 100%;
         height: 40px;
         border: 1px solid #E5E5E5;
         border-radius: 3px;
         padding: 0 16px;
     }
-      .error {
-          margin: 0;
-          color: red;
-          font-size: 13px;
-          text-align: left;
-      }
+
+    select > option {
+        color: red;
+    }
+
+    .error {
+        margin: 0;
+        color: red;
+        font-size: 13px;
+        text-align: left;
+    }
       .submit {
         border: 1px solid #E5E5E5;
         background-color: black;

@@ -83,55 +83,58 @@ const Login = () => {
         <div>
             <Nav/>
             <ShippingBanner/>
-        <Wrapper>
+        <Wrapper className="py-20 md:py-40">
             <form onSubmit={submitHandler}>
-                <img src={logo} alt='company logo' style={{width: '35px'}}/>
-                <h2 style={{textTransform: 'uppercase'}}>Your account for<br/> everything Laced Up</h2>
-                <div className='input-wrapper'>
-                <label htmlFor='email'>
-                    <input
-                        type='email'
-                        id='email'
-                        name='email'
-                        value={form.email}
-                        onChange={changeHandler}
-                        placeholder='Email address'
-                    />
-                    {(errorState.email.length > 0) ? <p className='error'>{errorState.email}</p>: null}
-                </label>
-                <br/>
-                <label htmlFor='password'>
-                    <input
-                        type='password'
-                        id='password'
-                        name='password'
-                        value={form.password}
-                        onChange={changeHandler}
-                        placeholder='Password'
-                    />
-                    {(errorState.password.length > 0) ? <p className='error'>{errorState.password}</p>: null}
-                </label>
+                <img src={logo} alt='company logo' style={{width: '35px', display: 'block', margin: '0 auto'}}/>
+                <h2 className="text-xl md:text-2xl font-bold leading-none my-10 uppercase text-center">Your account for<br/> everything Laced Up</h2>
+                <div className="mx-5 -space-y-2">
+                    <label htmlFor='email' className="grid place-items-center">
+                        <input
+                            type='email'
+                            id='email'
+                            name='email'
+                            value={form.email}
+                            onChange={changeHandler}
+                            placeholder='Email address'
+                        />
+                        {(errorState.email.length > 0) ? <p className='error'>{errorState.email}</p>: null}
+                    </label>
+                    <br/>
+                    <label htmlFor='password' className="grid place-items-center">
+                        <input
+                            type='password'
+                            id='password'
+                            name='password'
+                            value={form.password}
+                            onChange={changeHandler}
+                            placeholder='Password'
+                        />
+                        {(errorState.password.length > 0) ? <p className='error'>{errorState.password}</p>: null}
+                    </label>
                 </div>
                 
                 <br/>
-                <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                    <label htmlFor='isSignedIn' style={{display: 'flex'}}>
+                <div className="mx-5 flex justify-between">
+                    <label htmlFor='isSignedIn' className="flex">
                         <input
                             type='checkbox'
                             id='isSignedIn'
                             name='isSignedIn'
                             value={form.checkbox}
                         />
-                        <p style={{ margin: '0', fontSize: '13px', color: '#767676'}}>Keep me signed in</p>
+                        <p  className="text-xs pl-2" style={{ margin: '0',color: '#767676'}}>Keep me signed in</p>
                     </label>
-                    <p style={{ margin: '0', fontSize: '13px', color: '#BFBFBF'}}>Forgot password?</p>
+                    <p className="text-xs" style={{ margin: '0', color: '#BFBFBF'}}>Forgot password?</p>
                 </div>
                 
                 
                 <br/>
-                <p style={{fontSize: '13px', color: '#767676'}}>By logging in, you agree to Laced Up's Privacy Policy and Terms of Use.</p>
-                <button type='submit' className='submit'>Sign in</button>
-                <p style={{fontSize: '13px', color: '#767676'}}>Not a member? <Link to='/membership' style={{color: '#000'}}>Join Us</Link>.</p>
+                <p className="mx-14 text-center text-xs pb-8" style={{color: '#767676'}}>By logging in, you agree to Laced Up's <span className="underline">Privacy Policy</span> and <span className="underline">Terms of Use</span>.</p>
+                <div className="px-5 flex flex-col items-center justify-center" style={{margin: '0 auto'}}>
+                    <button className="mx-5 submit" type='submit'>Sign in</button>
+                    <p className="text-xs my-4" style={{color: '#767676'}}>Not a member? <Link to='/membership' style={{color: '#000'}}>Join Us</Link>.</p>
+                </div>
+                
             </form>
             
         </Wrapper>
@@ -144,14 +147,10 @@ const Login = () => {
 export default Login;
 
 const Wrapper = styled.div`
-    padding: 150px 0 150px 0;
-    max-width: 300px;
+    max-width: 400px;
     margin: 0 auto;
       
-    label {
-        display: grid;
-        place-items: center;
-    }
+  
     input[type='email'] {
         width: 100%;
         height: 40px;
@@ -165,9 +164,6 @@ const Wrapper = styled.div`
         border: 1px solid #E5E5E5;
         border-radius: 3px;
         padding: 0 16px;
-    }
-    .input-wrapper {
-        margin: 0 20px;
     }
       .error {
           margin: 0;

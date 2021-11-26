@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {useParams} from 'react-router-dom';
 import EmptyCart from './EmptyCart';
 import styled from 'styled-components';
@@ -7,18 +7,21 @@ import Nav from "../nav";
 import Footer from '../footer';
 
 
-const Cart = ({length, cartItems, totalPrice}) => {
+const Cart = ({data, cartItems, totalPrice}) => {
 
-    console.log('cart items', cartItems)
-    const params = useParams();
-    console.log('params', params)
+    //console.log('cart items', cartItems)
+    //const params = useParams();
+    //console.log('params', params)
+
+    const [list, setList] = useState(cartItems)
 
     
     //totals up item costs
-    const totalQty = cartItems.reduce((prev, curr) => {
-        return prev + curr.qty
-    }, 0);
-    console.log('total qty:',totalQty)
+    // const totalQty = cartItems.reduce((prev, curr) => {
+    //     return prev + curr.qty
+    // }, 0);
+
+    //console.log('total qty:',totalQty)
     
    document.title = `LacedUp | My Cart (${cartItems.length})`;
 
@@ -29,11 +32,16 @@ const Cart = ({length, cartItems, totalPrice}) => {
         return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     }
 
-    const removeItem = () => {
-        // cartItems.filter((item) => (
-        //     item.id
-        // ))
-    }
+
+    const removeItem = (id) => {
+        console.log('original list: ', list)
+        const newList = list.filter((item, index) => item.product.id !== id)
+        //console.log(`item removed`)
+        setList(newList)
+        
+        console.log('new list: ', list)
+        
+    };
 
     const editItem = () => {
         //
@@ -74,7 +82,7 @@ const Cart = ({length, cartItems, totalPrice}) => {
                                 <div>
                                     <h3>{item.product.name}</h3>
                                     <h5>Qty: {item.qty}</h5> 
-                                    <p onClick={removeItem}>Remove</p>
+                                    <button className="remove-btn" type="button" onClick={() => removeItem(item.product.id)}>Remove</button>
                                 </div>
                                 <p>${item.product.price}</p>
                                 
@@ -129,6 +137,20 @@ const Wrapper = styled.div`
 padding-bottom: 130px;
 .product-checkout {
     margin: 0 20px;
+}
+
+.remove-btn {
+    border: none;
+    background-color: #111;
+    font-size: 12px;
+    color: #FFF;
+    height: 2rem;
+    border-radius: 25px;
+    width: 6rem;
+}
+
+.remove-btn:hover {
+    background-color: #404040;
 }
 @media only screen and ${breakpoint.device.xl} {
    
